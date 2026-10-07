@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="What Axion does inside SOLIDWORKS: live geometry, drawing checks, standards, manufacturability, cost estimates, drawing generation and similar-part search.">
+<title data-i18n="t_features">Features · Axion</title>
+<link rel="canonical" href="https://axion-cad.com/features/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body data-page="features">
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="../" data-p="../"><i></i>AXION</a>
+    <ul>
+      <li><a href="../features/" data-p="../features/" data-i18n="n1" aria-current="page">Features</a></li>
+      <li><a href="../integrations/" data-p="../integrations/" data-i18n="n7">Integrations</a></li>
+      <li><a href="../cases/" data-p="../cases/" data-i18n="n5">Real cases</a></li>
+      <li><a href="../deployment/" data-p="../deployment/" data-i18n="n8">Deployment</a></li>
+    </ul>
+    <div class="right">
+      <button type="button" class="burger" id="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+        <div class="lang" role="group" aria-label="Language">
+        <button type="button" id="l-en" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" id="l-cs" data-lang="cs" aria-pressed="false">CZ</button>
+      </div>
+      <a class="btn primary sm" href="#contact" data-i18n="cta_demo">Book a demo</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="features first" id="features">
+  <div class="wrap">
+    <div class="sh"><span class="eyebrow" data-i18n="f_k">Capabilities</span><h1 data-i18n="f_h">One assistant. Every step from model to production.</h1></div>
+    <div class="bento">
+      <article class="card w4">
+        <span class="k" data-i18n="c1k">Live geometry</span>
+        <h3 data-i18n="c1h">Sees how the model is built</h3>
+        <p data-i18n-html="c1p">Not a picture of the part, but the <strong>live geometry</strong>: feature tree, how the part was built and how the assembly fits together. So it advises on a <strong>specific feature</strong>.</p>
+        <div class="viz tree"><div>▸ Part1</div><div>&nbsp;&nbsp;Base-Flange1</div><div class="hl">&nbsp;&nbsp;Edge-Flange2 <em data-i18n="c1t">R0.5 too tight for t = 3 mm</em></div><div>&nbsp;&nbsp;Cut-Extrude3 · 4× Ø9</div><div>&nbsp;&nbsp;Fillet1 · R2</div><div>&nbsp;&nbsp;Flat-Pattern1</div><div>&nbsp;&nbsp;Material &lt;S235JR&gt;</div></div>
+      </article>
+      <article class="card">
+        <span class="k" data-i18n="c2k">Drawing intelligence</span>
+        <h3 data-i18n="c2h">Understands drawings, not pictures</h3>
+        <p data-i18n-html="c2p">No OCR. Axion reads <strong>symbols and their links to geometry</strong>: it knows Ra 0.2 sits on the R17 cut-out of a sheet-metal part, where such a finish is needlessly expensive.</p>
+        <div class="viz ra"><img src="../assets/img/drawing-detail-ra-0-2-surface.png" alt="Drawing detail: Ra 0.2 surface symbol pointing to the R17 cut-out of a sheet-metal part" width="540" height="509" loading="lazy"><svg viewBox="0 0 540 509" aria-hidden="true"><path class="arc" d="M273 257 A76 76 0 0 1 425 257"/><rect class="sym" x="104" y="274" width="236" height="104" rx="10"/></svg><span class="flag" data-i18n="c2f">Ra 0.2 → R17 cut-out</span></div>
+      </article>
+      <article class="card w3">
+        <span class="k" data-i18n="c3k">Design for manufacturing</span>
+        <h3 data-i18n="c3h">Thinks about production first</h3>
+        <p data-i18n-html="c3p">Based on <strong>your shop's capabilities</strong>, it flags features that are hard to make, needlessly expensive or likely to cause a complaint.</p>
+        <div class="viz"><div class="chips"><span data-i18n="ch1">R1 &lt; tool R3</span><span data-i18n="ch2">Hole depth 10×D</span><span data-i18n="ch3">Wall 1.2 mm OK</span></div></div>
+      </article>
+      <article class="card w3">
+        <span class="k" data-i18n="c4k">Cost</span>
+        <h3 data-i18n="c4h">Knows the cost and how to lower it</h3>
+        <p data-i18n-html="c4p">Estimates <strong>production cost</strong> from geometry, material and tolerances, refines it with <strong>your price lists, quotes or ERP data</strong> and proposes cheaper production routes.</p>
+        <div class="viz costs"><div><span data-i18n="m1">Machined</span><i><b style="width:92%"></b></i><span>75 €</span></div><div><span data-i18n="m2">Sheet metal</span><i><b style="width:38%"></b></i><span>31 €</span></div><div class="save"><span data-i18n="m3">Reuse part</span><i><b style="width:12%"></b></i><span>10 €</span></div></div>
+      </article>
+      <article class="card">
+        <span class="k" data-i18n="c5k">Standards</span>
+        <h3 data-i18n="c5h">Checks standards and data quality</h3>
+        <p data-i18n="c5p">It checks drawings, parts, assemblies and documents against technical standards and company rules and returns a clear OK / NOK table.</p>
+        <div class="viz okl"><div><span>ISO 2768-m</span><b class="ok">OK</b></div><div><span data-i18n="o2">Sheet format A3</span><b class="ok">OK</b></div><div><span data-i18n="o3">Title block · material</span><b class="nok">NOK</b></div></div>
+      </article>
+      <article class="card">
+        <span class="k" data-i18n="c6k">Drawings</span>
+        <h3 data-i18n="c6h">Drawings in a fraction of the time</h3>
+        <p data-i18n="c6p">Views, scale, dimensions, BOM and flat pattern from your company templates. You only fine-tune.</p>
+        <div class="viz"><div class="chips"><span data-i18n="d1">3 views · 1:2</span><span data-i18n="d2">Dimensions</span><span data-i18n="d3">BOM</span><span data-i18n="d4">Flat pattern</span><span>DXF</span></div></div>
+      </article>
+      <article class="card">
+        <span class="k" data-i18n="c7k">Part reuse</span>
+        <h3 data-i18n="c7h">Don't draw the same part twice</h3>
+        <p data-i18n="c7p">Finds geometrically similar parts and mating parts in your database.</p>
+        <div class="viz sim"><div><svg viewBox="0 0 60 50"><path d="M6 42 V14 H54 V42 Z M22 14 V6 H38 V14" fill="none" stroke="#3CC8F0" stroke-width="2"/></svg><b>96%</b></div><div><svg viewBox="0 0 60 50"><path d="M6 42 V16 H54 V42 Z" fill="none" stroke="#2F7BFF" stroke-width="2"/><circle cx="30" cy="29" r="5" fill="none" stroke="#2F7BFF" stroke-width="2"/></svg><b>88%</b></div><div><svg viewBox="0 0 60 50"><path d="M6 42 V20 H54 V42 Z" fill="none" stroke="#93A3BC" stroke-width="2"/></svg><b>71%</b></div></div>
+      </article>
+      <article class="card w3">
+        <span class="k" data-i18n="c8k">Modeling</span>
+        <h3 data-i18n="c8h">And when you need it, it models too</h3>
+        <p data-i18n="c8p">From a drawing or a brief, Axion builds the part with fully defined sketches and material. A fast start you then shape to your intent.</p>
+      </article>
+      <article class="card w3">
+        <span class="k" data-i18n="c9k">Local-first</span>
+        <h3 data-i18n="c9h">Your data stays yours</h3>
+        <p data-i18n="c9p">Most features run locally in the add-in, with no AI and nothing sent anywhere. The AI provider joins only in chat, with only what the question needs.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="ui" id="panel">
+  <div class="wrap">
+    <div class="sh"><span class="eyebrow" data-i18n="u_k">The panel</span><h2 data-i18n="u_h">This is what Axion looks like in SOLIDWORKS.</h2><p data-i18n="u_p">A task pane docked next to your model. No separate app, no browser tab.</p></div>
+    <div class="grid2">
+      <div class="shotf"><img src="../assets/img/axion-task-pane-in-solidworks-menus.png" alt="Axion task pane in SOLIDWORKS: menus Design, Analyze, Support, the What I can do overview and the task composer" width="688" height="915" loading="lazy">
+        <button type="button" class="hot" data-u="1" style="left:76%;top:9%">1</button>
+        <button type="button" class="hot" data-u="2" style="left:63%;top:57%">2</button>
+        <button type="button" class="hot" data-u="3" style="left:62%;top:93.5%">3</button>
+        <button type="button" class="hot" data-u="4" style="left:97%;top:8.5%">4</button>
+      </div>
+      <ol>
+        <li data-u="1"><span>1</span><div><h3 data-i18n="u1h">Design · Analyze · Support</h3><p data-i18n="u1p">Tools grouped the way engineers work: modeling and drawings, checks and calculations, help and contact.</p></div></li>
+        <li data-u="2"><span>2</span><div><h3 data-i18n="u2h">What I can do</h3><p data-i18n="u2p">Modeling, drawings, assemblies, standards and calculations, AI assistant. The overview adapts to the functions your company deploys.</p></div></li>
+        <li data-u="3"><span>3</span><div><h3 data-i18n="u3h">Plain-language composer</h3><p data-i18n="u3p">Describe the task in your own words or attach a drawing. The AI provider is your choice.</p></div></li>
+        <li data-u="4"><span>4</span><div><h3 data-i18n="u4h">Settings for every user</h3><p data-i18n="u4p">Font size for the whole panel and company-specific rules, templates and data sources.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="demo" id="demo">
+  <div class="wrap">
+    <div class="sh"><span class="eyebrow" data-i18n="d_k">See it work</span><h2 data-i18n="d_h">Ask in plain language. Get engineering answers.</h2></div>
+    <div class="tabs" role="tablist">
+      <button type="button" role="tab" id="t-check" aria-selected="true" data-tab="check" data-i18n="tb1">Drawing check</button>
+      <button type="button" role="tab" id="t-dfm" aria-selected="false" data-tab="dfm" data-i18n="tb2">Manufacturability</button>
+      <button type="button" role="tab" id="t-sim" aria-selected="false" data-tab="sim" data-i18n="tb3">Similar parts</button>
+    </div>
+    <div class="tabpanel" role="tabpanel" id="tp">
+      <div><h3 id="tp-h"></h3><p id="tp-p"></p></div>
+      <div class="out"><div class="q" id="tp-q"></div><table><thead><tr><th id="th1"></th><th id="th2"></th><th id="th3"></th></tr></thead><tbody id="tp-b"></tbody></table></div>
+    </div>
+  </div>
+</section>
+
+<section class="nextp"><div class="wrap"><a href="../integrations/" data-p="../integrations/"><div><small data-i18n="nx_k">Next</small><strong data-i18n="x2k">Integrations</strong><em data-i18n="x2h">The whole company in one place</em></div><span class="ar">→</span></a></div></section>
+
+<section class="faq" id="faq">
+  <div class="wrap grid">
+    <div class="sh"><span class="eyebrow">FAQ</span><h2 data-i18n="q_h">Questions engineers ask us</h2></div>
+    <div>
+      <details open><summary data-i18n="q1">Is Axion just another AI that models parts?</summary><p data-i18n="a1">No. Modeling is one feature. The main value is connecting your data: reading live geometry and drawings, checking standards and manufacturability, estimating cost and reusing existing parts.</p></details>
+      <details><summary data-i18n="q4">Can it follow our company standards and templates?</summary><p data-i18n="a4">Yes. Templates, sheet formats, materials, rules and data sources for checks are set up for your company, so results match how you work.</p></details>
+      <details><summary data-i18n="q8">Which languages does Axion speak?</summary><p data-i18n="a8">Axion works in English and Czech, both in the panel and in the chat. Other languages can be added on customer request.</p></details>
+      <details><summary data-i18n="q5">How do we start?</summary><p data-i18n="a5">Book a demo. We'll show Axion on your own parts and drawings and set it up for your standards.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final" id="contact">
+  <div class="wrap">
+    <div class="cta-box">
+      <div class="cols">
+        <div>
+          <span class="eyebrow" data-i18n="ct_k">Contact</span>
+          <h2 style="margin-top:12px" data-i18n="ct_h">See Axion on your own models</h2>
+          <p class="lead" data-i18n="ct_p">Write to us and we'll set up a demo on your parts, drawings and company standards.</p>
+          <div style="margin-top:26px"><a class="btn primary" href="mailto:info@lmd-technologies.cz?subject=Axion%20demo"><span data-i18n="cta_demo">Book a demo</span><span class="arrow">→</span></a></div>
+        </div>
+        <div class="contact">
+          <div class="ci"><div><small>E-mail</small><strong id="mail">info@lmd-technologies.cz</strong></div><button type="button" class="copy" id="copy" data-i18n="copy">Copy</button></div>
+          <div class="ci"><div><small>Web</small><strong><a href="https://www.lmd-technologies.cz" target="_blank" rel="noopener">www.lmd-technologies.cz</a></strong></div><span aria-hidden="true">↗</span></div>
+          <div class="ci"><div class="dev"><img src="../assets/img/lmd-technologies-s-r-o.png" alt="LMD Technologies s.r.o." loading="lazy"><div><small data-i18n="dev">Developed by</small><strong>LMD Technologies s.r.o.</strong></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span data-i18n="ft1">© 2026 LMD Technologies s.r.o. · Axion for SOLIDWORKS</span><span data-i18n="ft2">Precision on every axis. Action on every command.</span></div></footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>
