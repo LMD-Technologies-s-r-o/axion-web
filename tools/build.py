@@ -47,6 +47,9 @@ PAGES = {
          "Jak Axion stavíme pro vaši firmu: úvodní schůzka, pilot na vašich dílech, nasazení. Lokálně od základu, vlastní API klíč k AI (Claude, Gemini, Mistral) a nízké náklady.")},
 }
 
+# site-verification meta tags (search engines), per language, home page only
+VERIFY = {"cs": ['<meta name="seznam-wmt" content="IhnsicO6uwQmePaEyjfg98wNKB0ICn86">'], "en": []}
+
 ORG = {"@type": "Organization", "@id": "https://www.lmd-technologies.cz/#org", "name": "LMD Technologies s.r.o.",
        "url": "https://www.lmd-technologies.cz", "email": "info@lmd-technologies.cz",
        "logo": EN_DOM + "assets/img/lmd-technologies-s-r-o.png",
@@ -70,6 +73,7 @@ def seo_block(lang, pid, depth):
                    "image": url(lang, "home") + f"assets/og-{lang}.png"})
     ldj = json.dumps({"@context": "https://schema.org", "@graph": ld}, ensure_ascii=False)
     og_locale = "cs_CZ" if lang == "cs" else "en_US"
+    verify = "".join("\n" + v for v in VERIFY[lang]) if pid == "home" else ""
     return f'''<!-- seo -->
 <title>{title}</title>
 <meta name="description" content="{desc}">
@@ -90,7 +94,7 @@ def seo_block(lang, pid, depth):
 <link rel="icon" href="{R}assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{R}assets/apple-touch-icon.png">
 <meta name="theme-color" content="#1F6FD6">
-<script type="application/ld+json">{ldj}</script>
+<script type="application/ld+json">{ldj}</script>{verify}
 <!-- /seo -->'''
 
 
