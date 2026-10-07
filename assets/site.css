@@ -740,3 +740,6 @@ details{border-bottom-color:rgba(15,23,42,.08)}
 @media (max-width:860px){.ui.uih .grid2{grid-template-columns:1fr;gap:24px}.ui.uih .side{display:contents}
   .ui.uih .side .sh{order:-2;margin-bottom:0}.ui.uih .shotf{order:-1;margin-inline:auto;width:88%;max-width:360px;transform:none}
   .ui.uih ol{order:1}.ui.uih .more{order:2;margin-top:0}}
+.lang a{color:var(--muted);font:600 .75rem var(--f-mono);padding:6px 11px;border-radius:999px;text-decoration:none}
+.lang a[aria-current="true"]{background:var(--fg);color:var(--bg)}
+.lang a:not([aria-current="true"]):hover{color:var(--fg)}

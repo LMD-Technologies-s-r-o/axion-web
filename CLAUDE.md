@@ -2,30 +2,32 @@
 
 Web produktu **Axion** (LMD Technologies s.r.o.) na **https://axion-cad.com**. Odpovídej česky, stručně.
 
-## Jak funguje nasazení
-- GitHub Pages, zdroj = větev `main`, kořen repa. **Každý push do `main` = web se sám aktualizuje** (cca 1–2 min).
-- Doména: `CNAME` = `axion-cad.com` (neměnit). `.nojekyll` musí zůstat.
-- `axion-cad.cz` obsluhuje samostatné repo `axion-cz-redirect` – jen přesměrování na `https://axion-cad.com/#cs`.
-  Do něj se web **nikdy nekopíruje**.
+## Dvě domény, jeden zdroj
+- **axion-cad.com** = anglická verze = toto repo (`axion-web`), GitHub Pages z `main`.
+- **axion-cad.cz** = česká verze = repo `axion-cz-redirect` (název historický), **generované** – needitovat ručně.
+- Česká verze má české adresy: `/funkce/`, `/propojeni/`, `/z-praxe/`, `/nasazeni/` (EN: features, integrations, cases, deployment).
+- Přepínač EN/CZ vede na odpovídající stránku druhé domény. Staré odkazy `axion-cad.com/#cs` JS přesměruje na .cz.
+- `CNAME` (`axion-cad.com`) a `.nojekyll` neměnit.
 
-## Struktura (od 2026-10-07 víc stránek)
-- `index.html` = úvod (hero, fakta, Proč Axion, panel, ukázka z praxe, FAQ, kontakt)
-- `features/`, `integrations/`, `cases/`, `deployment/` – podstránky (každá `index.html`)
-- `assets/site.css` – společné styly, `assets/site.js` – společný skript, `assets/img/` – obrázky
-- Menu, patička a kontakt jsou v každé stránce zvlášť → změnu udělat ve všech 5 souborech.
-- Odkazy mezi stránkami jsou relativní (`features/`, `../`), mají i `data-p` (JS k nim při CZ přidá `#cs`).
+## Struktura
+- `index.html` (úvod), `features/`, `integrations/`, `cases/`, `deployment/` – anglické stránky (zdroj).
+- `assets/site.css`, `assets/site.js` (+ český slovník `var CS={...}`), `assets/img/`, favicon, `og-*.png` (náhled pro sdílení).
+- `tools/build.py` – generátor: SEO hlavička EN stránek (mezi `<!-- seo -->` a `<!-- /seo -->`) + celá česká verze,
+  `sitemap.xml`, `robots.txt`, `404.html` pro obě domény. **Titulky a popisy stránek jsou v `PAGES` v build.py.**
+- Menu, patička a kontakt jsou v každé stránce zvlášť → změnu udělat ve všech 5 EN souborech.
 
 ## Jazyky
-- Výchozí text v HTML je **anglicky**; čeština je ve slovníku `var CS={...}` v `assets/site.js`
-  (klíče odpovídají `data-i18n` / `data-i18n-html` v HTML). **Každý nový text = HTML (EN) + klíč v CS.**
-- V českých textech nedělit jednopísmenné předložky (a, i, k, o, s, u, v, z) – za ně ` `.
-- Jazyk se drží napříč stránkami (localStorage + `#cs`), `?lang=cs` funguje taky.
+- Text v HTML je anglicky; čeština je ve slovníku `CS` v `assets/site.js` (klíče = `data-i18n` / `data-i18n-html`).
+  **Každý nový text = HTML (EN) + klíč v CS.** Bez klíče zůstane na české verzi angličtina.
+- V českých textech nedělit jednopísmenné předložky (a, i, k, o, s, u, v, z) – za ně `\u00a0`.
 
 ## Postup při úpravě webu
-1. `git pull`, upravit soubory, otestovat lokálně (`python3 -m http.server`) v EN i CZ, PC i mobil.
-2. Commit se srozumitelnou zprávou česky → push do `main`.
-3. Po ~2 min ověřit živý web.
-4. Zrcadlo na PC uživatele (`MechCopilot\Claude outputs\axion-github\axion-web\`) je jen záloha; **zdrojem pravdy je GitHub**.
+1. `git pull` v obou repech (`axion-web`, `axion-cz-redirect`).
+2. Upravit EN stránky + český slovník (+ případně `PAGES` v build.py).
+3. `python3 tools/build.py ../axion-cz-redirect` (vyžaduje `bs4`).
+4. Otestovat lokálně (`python3 -m http.server`) obě verze, PC i mobil, bez chyb v konzoli.
+5. Commit + push **obou** rep do `main`; po ~2 min ověřit axion-cad.com i axion-cad.cz.
+6. Zrcadlo na PC uživatele (`MechCopilot\Claude outputs\axion-github\`) je jen záloha; zdrojem pravdy je GitHub.
 
 ## Obsahová pravidla
 - „SOLIDWORKS" velkými písmeny a v češtině se neskloňuje („v SOLIDWORKS").

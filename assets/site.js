@@ -1,4 +1,12 @@
-(function(){if(document.body.dataset.page!=="home")return;var M={features:"features/",panel:"features/#panel",demo:"features/#demo",connect:"integrations/",real:"cases/",build:"deployment/",security:"deployment/#security",faq:"deployment/#faq"},h=location.hash.slice(1);if(M[h])location.replace(M[h]);})();
+(function(){
+var SITE=document.documentElement.getAttribute("data-site")==="cs"?"cs":"en";
+var P={en:{"":"",features:"features/",integrations:"integrations/",cases:"cases/",deployment:"deployment/"},cs:{"":"",features:"funkce/",integrations:"propojeni/",cases:"z-praxe/",deployment:"nasazeni/"}};
+var page=document.body.dataset.page||"";if(page==="home")page="";
+/* old Czech links on the English domain (#cs, ?lang=cs) -> Czech domain */
+if(SITE==="en"&&(location.hash==="#cs"||/[?&]lang=cs\b/.test(location.search))){location.replace("https://axion-cad.cz/"+P.cs[page]);return}
+/* anchors of the former one-page site -> subpages */
+if(!page){var p=P[SITE],M={features:p.features,panel:p.features+"#panel",demo:p.features+"#demo",connect:p.integrations,real:p.cases,build:p.deployment,security:p.deployment+"#security",faq:p.deployment+"#faq"},h=location.hash.slice(1);if(M[h])location.replace(M[h]);}
+})();
 
 (function(){
 var HAS_HERO=!!document.getElementById("cad"),HAS_TABS=!!document.getElementById("tp-b");
@@ -78,12 +86,9 @@ function apply(l){
   lang=l;document.documentElement.lang=l==="cs"?"cs":"en";
   document.querySelectorAll("[data-i18n]").forEach(function(e){e.textContent=T(e.dataset.i18n)});
   document.querySelectorAll("[data-i18n-html]").forEach(function(e){e.innerHTML=T(e.dataset.i18nHtml)});
-  document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.lang===l?"true":"false")});
   var m=DATA[l].marq.concat(DATA[l].marq);
   var tr=document.getElementById("track");if(tr)tr.innerHTML=m.map(function(x){return"<span>"+x+"</span>"}).join("");
   if(HAS_TABS)showTab(curTab);if(HAS_HERO)restartChat();
-  document.querySelectorAll("a[data-p]").forEach(function(a){a.setAttribute("href",a.dataset.p+(l==="cs"?"#cs":""))});
-  try{localStorage.setItem("axion-lang",l)}catch(e){}
 }
 
 /* ---------- tabs ---------- */
@@ -244,8 +249,7 @@ hero.fit(sheetGeo(3));hero.resize();
 (function loop(){if(!reduce){if(!hero.drag){hero.ang+=0.005}hero.draw()}requestAnimationFrame(loop)})();}
 
 /* ---------- start ---------- */
-var start="en",qs=/[?&]lang=(cs|en)\b/.exec(location.search);if(qs)start=qs[1];else if(location.hash==="#cs")start="cs";else{try{if(localStorage.getItem("axion-lang")==="cs")start="cs"}catch(e){}}
-document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){apply(b.dataset.lang)})});
+var start=document.documentElement.getAttribute("data-site")==="cs"?"cs":"en";
 apply(start);
 })();
 
