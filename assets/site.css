@@ -35,8 +35,7 @@ p{margin:0}
 .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(5,7,12,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav .wrap{display:flex;align-items:center;gap:24px;min-height:68px}
 .logo{font-family:var(--f-display);font-weight:700;font-size:1.3rem;letter-spacing:.08em;text-decoration:none;display:flex;align-items:center;gap:10px}
-.logo i{width:26px;height:26px;border-radius:7px;background:var(--grad);display:grid;place-items:center;box-shadow:0 0 20px rgba(47,123,255,.6)}
-.logo i::before{content:"";width:10px;height:10px;border:2px solid #fff;border-radius:2px;transform:rotate(45deg)}
+.logo img{display:block;height:44px;width:auto}
 .nav ul{display:flex;gap:26px;list-style:none;margin:0 0 0 18px;padding:0}
 .nav ul a{text-decoration:none;color:var(--muted);font-weight:500;font-size:.95rem;transition:color .2s}
 .nav ul a:hover{color:var(--fg)}
@@ -318,8 +317,7 @@ p{margin:0}
 .panel .steps li.done .s{color:#13985A}
 .ans{display:grid;gap:6px}
 .who-a{display:flex;align-items:center;gap:8px;font-weight:600;font-size:.82rem;color:#1B2433}
-.who-a .av{width:20px;height:20px;border-radius:6px;background:linear-gradient(135deg,#4CC0E6,#1F6CC9);position:relative}
-.who-a .av::before{content:"";position:absolute;left:5px;top:8px;width:10px;height:3px;border-left:3px solid #fff;border-right:3px solid #fff;box-sizing:border-box}
+.who-a .av{width:22px;height:20px;background:url(axion-mark.svg) center/contain no-repeat}
 .panel .msg-a{margin-left:9px;border-left:3px solid #2C8AD8;border-image:linear-gradient(#4CC0E6,#1F6CC9) 1;padding:2px 0 2px 14px;line-height:1.55}
 .msg-a ul{list-style:none;margin:2px 0 0;padding:0}
 .msg-a li::before{content:"• "}
@@ -426,7 +424,6 @@ html,body{background:var(--bg);color:var(--fg)}
 .btn.ghost:hover,.mods span:hover{background:rgba(31,95,214,.06);border-color:var(--blue)}
 .btn.primary{box-shadow:0 10px 26px -10px rgba(31,95,214,.55)}
 .btn.primary:hover{box-shadow:0 16px 34px -10px rgba(31,95,214,.65)}
-.logo i{box-shadow:0 4px 14px rgba(31,95,214,.35)}
 .pill b{color:var(--blue);background:rgba(31,95,214,.10)}
 .mock::before{background:radial-gradient(closest-side,rgba(31,95,214,.18),transparent)}
 .window{background:#FFFFFF;box-shadow:0 30px 80px -30px rgba(60,45,20,.35),0 0 0 1px rgba(70,55,30,.06)}
