@@ -53,7 +53,7 @@ PAGES = {
 }
 
 # site-verification meta tags (search engines), per language, home page only
-VERIFY = {"cs": ['<meta name="seznam-wmt" content="IhnsicO6uwQmePaEyjfg98wNKB0ICn86">'], "en": []}
+VERIFY = {"cs": ['<meta name="seznam-wmt" content="bSFUqpU7w6FnbOcUHECLMPJb2pOOMLrl">'], "en": ['<meta name="seznam-wmt" content="bSFUqpU7w6FnbOcUHECLMPJb2pOOMLrl">']}
 
 ORG = {"@type": "Organization", "@id": "https://www.lmd-technologies.cz/#org", "name": "LMD Technologies s.r.o.",
        "url": "https://www.lmd-technologies.cz", "email": "info@lmd-technologies.cz",
