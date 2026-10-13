@@ -2,8 +2,8 @@
 var SITE=document.documentElement.getAttribute("data-site")==="cs"?"cs":"en";
 var P={en:{"":"",features:"features/",integrations:"integrations/",cases:"cases/",deployment:"deployment/"},cs:{"":"",features:"funkce/",integrations:"propojeni/",cases:"z-praxe/",deployment:"nasazeni/"}};
 var page=document.body.dataset.page||"";if(page==="home")page="";
-/* old Czech links on the English domain (#cs, ?lang=cs) -> Czech domain */
-if(SITE==="en"&&(location.hash==="#cs"||/[?&]lang=cs\b/.test(location.search))){location.replace("https://axion-cad.cz/"+P.cs[page]);return}
+/* old Czech links (#cs, ?lang=cs) -> Czech version under /cs/ */
+if(SITE==="en"&&(location.hash==="#cs"||/[?&]lang=cs\b/.test(location.search))){location.replace("/cs/"+P.cs[page]);return}
 /* anchors of the former one-page site -> subpages */
 if(!page){var p=P[SITE],M={features:p.features,panel:p.features+"#panel",demo:p.features+"#demo",connect:p.integrations,real:p.cases,build:p.deployment,security:p.deployment+"#security",faq:p.deployment+"#faq"},h=location.hash.slice(1);if(M[h])location.replace(M[h]);}
 })();
@@ -281,3 +281,20 @@ apply(start);
 b.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';document.body.appendChild(b);
 function u(){b.classList.toggle("on",(window.scrollY||document.documentElement.scrollTop)>600)}window.addEventListener("scroll",u,{passive:true});u();
 b.addEventListener("click",function(){var r=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;window.scrollTo({top:0,behavior:r?"auto":"smooth"})})})();
+
+/* language: remember the visitor's choice; Czech/Slovak browsers on the English site get an offer (no auto-redirect) */
+(function(){
+  var KEY="axion-lang",cs=document.documentElement.getAttribute("data-site")==="cs";
+  function get(){try{return localStorage.getItem(KEY)}catch(e){return null}}
+  function set(v){try{localStorage.setItem(KEY,v)}catch(e){}}
+  [].forEach.call(document.querySelectorAll(".lang a[hreflang]"),function(a){a.addEventListener("click",function(){set(a.getAttribute("hreflang"))})});
+  if(cs||get())return;
+  var l=(navigator.languages&&navigator.languages[0])||navigator.language||"";
+  if(!/^(cs|sk)\b/i.test(l))return;
+  var to=document.querySelector('.lang a[hreflang="cs"]');if(!to)return;
+  var b=document.createElement("div");b.className="langbar";b.setAttribute("role","region");b.setAttribute("aria-label","Česká verze");b.lang="cs";
+  b.innerHTML='<span>Tento web je k\u00a0dispozici i\u00a0v\u00a0češtině.</span><a class="go" href="'+to.getAttribute("href")+'">Přepnout do češtiny</a><button type="button" class="x" aria-label="Zavřít">×</button>';
+  b.querySelector(".go").addEventListener("click",function(){set("cs")});
+  b.querySelector(".x").addEventListener("click",function(){set("en");b.remove()});
+  document.body.appendChild(b);
+})();

@@ -747,3 +747,13 @@ details{border-bottom-color:rgba(15,23,42,.08)}
 .totop:focus-visible{outline:3px solid rgba(31,95,214,.45);outline-offset:3px}
 .totop svg{width:20px;height:20px}
 @media (prefers-reduced-motion:reduce){.totop{transition:none}}
+
+/* Czech-version offer (English site, cs/sk browser) */
+.langbar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:60;display:flex;align-items:center;gap:14px;
+  max-width:calc(100% - 32px);padding:10px 12px 10px 16px;border-radius:12px;background:#0E2747;color:#fff;
+  box-shadow:0 10px 30px rgba(14,39,71,.28);font-size:14px;line-height:1.35}
+.langbar .go{color:#fff;background:#2F7BFF;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:600;white-space:nowrap}
+.langbar .go:hover{background:#1A4FD8}
+.langbar .x{background:none;border:0;color:#B6C3D4;font-size:20px;line-height:1;cursor:pointer;padding:2px 6px}
+.langbar .x:hover{color:#fff}
+@media (max-width:560px){.langbar{left:16px;right:84px;transform:none;max-width:none;flex-wrap:wrap;bottom:20px;gap:8px 12px}.langbar span{flex:1 1 100%}}

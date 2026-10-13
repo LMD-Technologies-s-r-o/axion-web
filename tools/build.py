@@ -1,19 +1,24 @@
 #!/usr/bin/env python3
-"""Axion web build: SEO head for the English site (in place) + static Czech site for axion-cad.cz.
+"""Axion web build: one site on axion-cad.com – English at the root, Czech under /cs/.
 
 Source of truth:
   - English pages in the repo root (index.html, features/, integrations/, cases/, deployment/)
   - Czech texts in assets/site.js  (var CS={...}, keys = data-i18n / data-i18n-html)
   - Page titles/descriptions below in PAGES
 
-Usage:  python3 tools/build.py ../axion-cz-site     (path to a clone of the repo that serves axion-cad.cz)
-Then commit + push both repos.
+Output: English pages updated in place (SEO head, language switch), Czech pages generated into cs/,
+        one sitemap.xml / robots.txt / 404.html for both languages.
+Usage:  python3 tools/build.py [../axion-cz-redirect]
+        Optional argument = clone of the repo serving axion-cad.cz; it gets redirect pages
+        (old Czech URLs -> axion-cad.com/cs/...). Then commit + push.
 """
 import json, os, re, shutil, sys
 from bs4 import BeautifulSoup
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-EN_DOM, CS_DOM = "https://axion-cad.com/", "https://axion-cad.cz/"
+EN_DOM = "https://axion-cad.com/"
+CS_DOM = EN_DOM + "cs/"
+OLD_CS_DOM = "https://axion-cad.cz/"
 
 # page id -> (en path, cs path)
 PATHS = {"home": ("", ""), "features": ("features/", "funkce/"), "integrations": ("integrations/", "propojeni/"),
@@ -70,7 +75,7 @@ def seo_block(lang, pid, depth):
         ld.append({"@type": "SoftwareApplication", "name": "Axion", "applicationCategory": "DesignApplication",
                    "operatingSystem": "Windows", "url": url(lang, "home"), "inLanguage": ["cs", "en"],
                    "description": desc, "publisher": {"@id": ORG["@id"]},
-                   "image": url(lang, "home") + f"assets/og-{lang}.png"})
+                   "image": EN_DOM + f"assets/og-{lang}.png"})
     ldj = json.dumps({"@context": "https://schema.org", "@graph": ld}, ensure_ascii=False)
     og_locale = "cs_CZ" if lang == "cs" else "en_US"
     verify = "".join("\n" + v for v in VERIFY[lang]) if pid == "home" else ""
@@ -87,7 +92,7 @@ def seo_block(lang, pid, depth):
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{url(lang, pid)}">
-<meta property="og:image" content="{url(lang, "home")}assets/og-{lang}.png">
+<meta property="og:image" content="{EN_DOM}assets/og-{lang}.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -149,6 +154,11 @@ def to_czech(html, pid, CS):
         a["href"] = cz_path(a["href"])
     for a in soup.find_all(attrs={"data-p": True}):
         a["data-p"] = cz_path(a["data-p"])
+    for attr in ("href", "src"):                       # cs/ is one level deeper -> shared assets
+        for a in soup.find_all(attrs={attr: True}):
+            v = a[attr]
+            if not v.startswith(("http", "mailto:", "#", "/", "data:")) and re.match(r"(\.\./)*assets/", v):
+                a[attr] = "../" + v
     return str(soup)
 
 
@@ -161,9 +171,10 @@ def cz_path(v):
     return v
 
 
-def sitemap(lang):
+def sitemap():
     rows = []
-    for pid in PATHS:
+    for lang in ("en", "cs"):
+      for pid in PATHS:
         rows.append(f'''  <url><loc>{url(lang, pid)}</loc>
     <xhtml:link rel="alternate" hreflang="en" href="{url("en", pid)}"/>
     <xhtml:link rel="alternate" hreflang="cs" href="{url("cs", pid)}"/>
@@ -172,13 +183,12 @@ def sitemap(lang):
             'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + "\n".join(rows) + "\n</urlset>\n")
 
 
-def robots(lang):
-    return f"User-agent: *\nAllow: /\n\nSitemap: {url(lang, 'home')}sitemap.xml\n"
+def robots():
+    return f"User-agent: *\nAllow: /\n\nSitemap: {EN_DOM}sitemap.xml\n"
 
 
-def page_404(home_html, lang):
-    t = {"en": ("Page not found", "This page does not exist or has moved.", "Back to the home page"),
-         "cs": ("Stránka nenalezena", "Tato stránka neexistuje nebo se přesunula.", "Zpět na úvodní stránku")}[lang]
+def page_404(home_html):
+    t = ("Page not found", "This page does not exist or has moved.", "Back to the home page")
     head = re.sub(r"<!-- seo -->.*?<!-- /seo -->",
                   f'<title>{t[0]} | Axion</title>\n<meta name="robots" content="noindex">\n'
                   f'<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">', home_html.split("<body")[0], flags=re.S)
@@ -189,15 +199,49 @@ def page_404(home_html, lang):
     footer = re.search(r"<footer>.*?</footer>", home_html, re.S).group(0)
     return (head + '<body data-page="404">\n' + nav +
             f'\n<main id="top"><section class="statement first"><div class="wrap"><div class="sh"><span class="eyebrow">404</span>'
-            f'<h1>{t[0]}</h1><p>{t[1]}</p></div><a class="btn primary" href="/"><span>{t[2]}</span><span class="arrow">→</span></a>'
+            f'<h1>{t[0]}</h1><p>{t[1]}</p><p lang="cs">Stránka nenalezena – neexistuje nebo se přesunula.</p></div>'
+            f'<a class="btn primary" href="/"><span>{t[2]}</span><span class="arrow">→</span></a> '
+            f'<a class="btn" href="/cs/" lang="cs"><span>Česká verze</span><span class="arrow">→</span></a>'
             f'</div></section></main>\n{footer}\n</body>\n</html>\n')
 
 
+def redirect_page(target):
+    return f'''<!doctype html>
+<html lang="cs"><head><meta charset="utf-8">
+<title>Axion – přesměrování</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="{target}">
+<meta http-equiv="refresh" content="0; url={target}">
+<script>location.replace("{target}"+location.hash)</script>
+</head><body><p>Web se přesunul na <a href="{target}">{target}</a>.</p></body></html>
+'''
+
+
+def build_redirects(cz):
+    """Old Czech domain -> axion-cad.com/cs/... (path preserved). Only CNAME/.nojekyll/docs stay."""
+    keep = {"CNAME", ".nojekyll", ".git", "CLAUDE.md", "README.md"}
+    for n in os.listdir(cz):
+        if n in keep:
+            continue
+        p = os.path.join(cz, n)
+        shutil.rmtree(p) if os.path.isdir(p) else os.remove(p)
+    for pid, (_, cs_path) in PATHS.items():
+        os.makedirs(os.path.join(cz, cs_path), exist_ok=True)
+        open(os.path.join(cz, cs_path, "index.html"), "w", encoding="utf-8").write(redirect_page(CS_DOM + cs_path))
+    # anything else (unknown paths) -> same path under /cs/
+    open(os.path.join(cz, "404.html"), "w", encoding="utf-8").write(redirect_page(CS_DOM).replace(
+        f'location.replace("{CS_DOM}"+location.hash)',
+        f'location.replace("{CS_DOM}"+location.pathname.replace(/^\\/+/,"")+location.search+location.hash)'))
+    open(os.path.join(cz, "robots.txt"), "w").write("User-agent: *\nAllow: /\n")
+    open(os.path.join(cz, "CNAME"), "w").write("axion-cad.cz\n")
+    open(os.path.join(cz, ".nojekyll"), "w").close()
+
+
 def main():
-    if len(sys.argv) != 2:
+    if len(sys.argv) > 2:
         sys.exit(__doc__)
-    cz = os.path.abspath(sys.argv[1])
     CS = load_cs()
+    shutil.rmtree(os.path.join(ROOT, "cs"), ignore_errors=True)
     for pid, (en_path, cs_path) in PATHS.items():
         src = os.path.join(ROOT, en_path, "index.html")
         depth = en_path.count("/")
@@ -205,24 +249,21 @@ def main():
         html = set_lang_switch(set_head(html, "en", pid, depth), "en", pid)
         open(src, "w", encoding="utf-8").write(html)
         cz_html = to_czech(html, pid, CS)
-        cz_html = set_lang_switch(set_head(cz_html, "cs", pid, depth), "cs", pid)
+        cz_html = set_lang_switch(set_head(cz_html, "cs", pid, depth + 1), "cs", pid)
         cz_html = cz_html.replace('<html data-site="cs" lang="cs">', '<html lang="cs" data-site="cs">')
         if not cz_html.lstrip().lower().startswith("<!doctype"):
             cz_html = "<!doctype html>\n" + cz_html
-        os.makedirs(os.path.join(cz, cs_path), exist_ok=True)
-        open(os.path.join(cz, cs_path, "index.html"), "w", encoding="utf-8").write(cz_html)
-    # assets
-    shutil.rmtree(os.path.join(cz, "assets"), ignore_errors=True)
-    shutil.copytree(os.path.join(ROOT, "assets"), os.path.join(cz, "assets"))
-    # site files
-    for lang, base in (("en", ROOT), ("cs", cz)):
-        open(os.path.join(base, "sitemap.xml"), "w", encoding="utf-8").write(sitemap(lang))
-        open(os.path.join(base, "robots.txt"), "w", encoding="utf-8").write(robots(lang))
-        home = open(os.path.join(base, "index.html"), encoding="utf-8").read()
-        open(os.path.join(base, "404.html"), "w", encoding="utf-8").write(page_404(home, lang))
-    open(os.path.join(cz, "CNAME"), "w").write("axion-cad.cz\n")
-    open(os.path.join(cz, ".nojekyll"), "w").close()
-    print("ok: en (in place) + cs ->", cz)
+        os.makedirs(os.path.join(ROOT, "cs", cs_path), exist_ok=True)
+        open(os.path.join(ROOT, "cs", cs_path, "index.html"), "w", encoding="utf-8").write(cz_html)
+    open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8").write(sitemap())
+    open(os.path.join(ROOT, "robots.txt"), "w", encoding="utf-8").write(robots())
+    home = open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
+    open(os.path.join(ROOT, "404.html"), "w", encoding="utf-8").write(page_404(home))
+    if len(sys.argv) == 2:
+        build_redirects(os.path.abspath(sys.argv[1]))
+        print("ok: en + cs/ (in place), redirects ->", sys.argv[1])
+    else:
+        print("ok: en + cs/ (in place)")
 
 
 if __name__ == "__main__":

@@ -2,22 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url><loc>https://axion-cad.com/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.cz/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/"/>
   </url>
   <url><loc>https://axion-cad.com/features/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/features/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.cz/funkce/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/funkce/"/>
   </url>
   <url><loc>https://axion-cad.com/integrations/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/integrations/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.cz/propojeni/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/propojeni/"/>
   </url>
   <url><loc>https://axion-cad.com/cases/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/cases/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.cz/z-praxe/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/z-praxe/"/>
   </url>
   <url><loc>https://axion-cad.com/deployment/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/deployment/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.cz/nasazeni/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/nasazeni/"/>
+  </url>
+  <url><loc>https://axion-cad.com/cs/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/"/>
+  </url>
+  <url><loc>https://axion-cad.com/cs/funkce/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/features/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/funkce/"/>
+  </url>
+  <url><loc>https://axion-cad.com/cs/propojeni/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/integrations/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/propojeni/"/>
+  </url>
+  <url><loc>https://axion-cad.com/cs/z-praxe/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/cases/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/z-praxe/"/>
+  </url>
+  <url><loc>https://axion-cad.com/cs/nasazeni/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/deployment/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/nasazeni/"/>
   </url>
 </urlset>

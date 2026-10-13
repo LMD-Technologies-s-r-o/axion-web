@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="cs" data-site="cs">
+<head>
+<meta charset="utf-8"/>
+<!-- seo -->
+<title>Propojení SOLIDWORKS s PDM/PLM, ERP (SAP, Helios) a MES | Axion</title>
+<meta name="description" content="Axion spojí CAD, PDM/PLM, ERP (SAP, Helios), MES, výrobu, kvalitu i dokumentaci v jednom rozhraní. Zapisuje jen do PDM/PLM, ostatní systémy čte přes API.">
+<link rel="canonical" href="https://axion-cad.com/cs/propojeni/">
+<link rel="alternate" hreflang="en" href="https://axion-cad.com/integrations/">
+<link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/propojeni/">
+<link rel="alternate" hreflang="x-default" href="https://axion-cad.com/integrations/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Axion">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:title" content="Propojení SOLIDWORKS s PDM/PLM, ERP (SAP, Helios) a MES | Axion">
+<meta property="og:description" content="Axion spojí CAD, PDM/PLM, ERP (SAP, Helios), MES, výrobu, kvalitu i dokumentaci v jednom rozhraní. Zapisuje jen do PDM/PLM, ostatní systémy čte přes API.">
+<meta property="og:url" content="https://axion-cad.com/cs/propojeni/">
+<meta property="og:image" content="https://axion-cad.com/assets/og-cs.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<meta name="theme-color" content="#1F6FD6">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://www.lmd-technologies.cz/#org", "name": "LMD Technologies s.r.o.", "url": "https://www.lmd-technologies.cz", "email": "info@lmd-technologies.cz", "logo": "https://axion-cad.com/assets/img/lmd-technologies-s-r-o.png", "address": {"@type": "PostalAddress", "addressLocality": "Praha", "addressCountry": "CZ"}}, {"@type": "WebSite", "name": "Axion", "url": "https://axion-cad.com/cs/", "inLanguage": "cs", "publisher": {"@id": "https://www.lmd-technologies.cz/#org"}}]}</script>
+<!-- /seo -->
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../../assets/site.css" rel="stylesheet"/>
+</head>
+<body data-page="integrations">
+<header class="nav">
+<div class="wrap">
+<a aria-label="Axion" class="logo" data-p="../" href="../"><img alt="Axion" height="44" src="../../assets/axion-logo.svg" width="153"/></a>
+<ul>
+<li><a data-i18n="n1" data-p="../funkce/" href="../funkce/">Funkce</a></li>
+<li><a aria-current="page" data-i18n="n7" data-p="../propojeni/" href="../propojeni/">Propojení</a></li>
+<li><a data-i18n="n5" data-p="../z-praxe/" href="../z-praxe/">Z praxe</a></li>
+<li><a data-i18n="n8" data-p="../nasazeni/" href="../nasazeni/">Nasazení</a></li>
+</ul>
+<div class="right">
+<button aria-expanded="false" aria-label="Menu" class="burger" id="burger" type="button"><i></i><i></i><i></i></button>
+<div class="lang" role="group" aria-label="Language"><a href="https://axion-cad.com/integrations/" hreflang="en" lang="en">EN</a><a href="https://axion-cad.com/cs/propojeni/" hreflang="cs" lang="cs" aria-current="true">CZ</a></div>
+<a class="btn primary sm" data-i18n="cta_demo" href="#contact">Domluvit ukázku</a>
+</div>
+</div>
+</header>
+<main id="top">
+<section class="intg first" id="connect">
+<div class="wrap">
+<div class="sh"><span class="eyebrow" data-i18n="i_k">Propojení</span><h1 data-i18n="i_h">Celá firma na jednom místě.</h1><p data-i18n="i_p">Axion spojí data z konstrukce i zbytku firmy ve svém rozhraní. Z ERP, výroby a dalších systémů čte informace přes API a skládá je do jedné odpovědi. Zapisuje jen do PDM/PLM, protože to je primární pracovní prostředí konstruktéra. Odtud vaše schválené procesy předají data dál do ERP a výroby. Napojená je i technická dokumentace, která s konstruktéry úzce spolupracuje a přebírá data přímo z CAD.</p></div>
+<div class="hub">
+<div class="side l">
+<small><span data-i18n="i_l">Vývoj a dokumentace</span><em class="rw" data-i18n="i_lm">čte i zapisuje</em></small>
+<div class="node"><b>SOLIDWORKS · CAD</b><span data-i18n="i_l1">modely, výkresy, sestavy</span></div>
+<div class="node"><b>PDM / PLM</b><span data-i18n="i_l2">položky, revize, workflow</span></div>
+<div class="node"><b data-i18n="i_l3h">Technická dokumentace</b><span data-i18n="i_l3">přebírá data přímo z CAD</span></div>
+</div>
+<div class="mid"><div class="core"><strong>AXION</strong><em data-i18n="i_c">vše na jednom místě</em></div></div>
+<div class="side r">
+<small><span data-i18n="i_r">Firma</span><em class="ro" data-i18n="i_rm">čte přes API</em></small>
+<div class="node"><b>ERP</b><span data-i18n="i_r1">ceny, sklad, dodavatelé</span></div>
+<div class="node"><b data-i18n="i_r2h">Výroba</b><span data-i18n="i_r2">MES, kapacity, živý plán výroby</span></div>
+<div class="node"><b data-i18n="i_r3h">Nákup</b><span data-i18n="i_r3">objednávky, termíny dodání</span></div>
+<div class="node"><b data-i18n="i_r4h">Kvalita</b><span data-i18n="i_r4">měření, neshody, reklamace</span></div>
+<div class="node"><b data-i18n="i_r5h">Obchod a servis</b><span data-i18n="i_r5">nabídky, zakázky, servis</span></div>
+</div>
+</div>
+<div class="flows">
+<article class="card"><span class="k">PDM / PLM</span><h3 data-i18n="i1h">Zapisuje tam, kde konstruktér pracuje</h3><p data-i18n="i1p">PDM/PLM je primární pracovní prostředí konstruktéra, proto Axion zapisuje jen sem: zakládá položky, vyplňuje datové karty, vyzvedává a vrací soubory a spouští přechody workflow. Navazující operace v PDM/PLM pak předají data do ERP a výroby tak, jak je máte nastavené.</p></article>
+<article class="card"><span class="k">ERP</span><h3 data-i18n="i2h">Ceny a sklad u každého dílu</h3><p data-i18n="i2p">Přes API (např. SAP, Helios) načte cenu, dodavatele, skladovou zásobu i technologický postup a ukáže je přímo u dílů, v kusovnících a v odhadech ceny. Do ERP nic nezapisuje.</p></article>
+<article class="card"><span class="k" data-i18n="i3k">Výroba</span><h3 data-i18n="i3h">Výroba v živém přenosu</h3><p data-i18n="i3p">Pomůže propojit data a informace z MES systémů. Konstruktér tak má plánování výroby v živém přenosu na jednom místě: kapacity, technologie i stav zakázek vidí ještě před vydáním dílu.</p></article>
+<article class="card"><span class="k" data-i18n="i4k">Další oddělení</span><h3 data-i18n="i4h">Celá firma v jedné odpovědi</h3><p data-i18n="i4p">Nákup, kvalita, obchod: Axion spojí jejich data s konstrukcí. Zeptáte se jednou a k dílu dostanete cenu, termín, sklad i historii reklamací najednou.</p></article>
+</div>
+<p class="note" data-i18n="i_n">Informační systémy napojujeme přes API: standardní systémy jako SAP nebo Helios a další, které API rozhraní poskytují. Připojují se jen pro čtení. Zápis zůstává v PDM/PLM, v prostředí, kde konstruktéři pracují a kde máte revize i schvalování pod kontrolou. Které systémy a jaká data propojíme, určíme společně na úvodní schůzce.</p>
+</div>
+</section>
+<section class="nextp"><div class="wrap"><a data-p="../z-praxe/" href="../z-praxe/"><div><small data-i18n="nx_k">Pokračujte</small><strong data-i18n="x3k">Z praxe</strong><em data-i18n="x3h">Skutečné výstupy</em></div><span class="ar">→</span></a></div></section>
+<section class="faq" id="faq">
+<div class="wrap grid">
+<div class="sh"><span class="eyebrow">FAQ</span><h2 data-i18n="q_h">Na co se konstruktéři ptají</h2></div>
+<div>
+<details open=""><summary data-i18n="q10">Na jaké informační systémy se Axion napojí?</summary><p data-i18n="a10">Na standardní systémy jako SAP nebo Helios, na MES systémy a na další, které poskytují API rozhraní. Data z nich Axion čte, položky zakládá a upravuje jen v PDM/PLM.</p></details>
+<details><summary data-i18n="q3">Opouštějí naše data firmu?</summary><p data-i18n="a3">Lokální funkce běží celé v add-inu. Jen dotazy v chatu jdou k poskytovateli AI, kterého si zvolíte, a to jen s kontextem, který dotaz potřebuje. Možný je i lokální AI model bez přístupu k internetu.</p></details>
+<details><summary data-i18n="q6">Musíme brát pevně daný balík?</summary><p data-i18n="a6">Ne. Žádné uzamčené jádro neexistuje. Na úvodní schůzce si určíte, co má Axion umět, a podle toho ho postavíme. Funkce lze později přidat, změnit nebo odebrat.</p></details>
+<details><summary data-i18n="q5">Jak začít?</summary><p data-i18n="a5">Domluvte si ukázku. Předvedeme Axion na vašich dílech a výkresech a nastavíme ho podle vašich norem.</p></details>
+</div>
+</div>
+</section>
+<section class="final" id="contact">
+<div class="wrap">
+<div class="cta-box">
+<div class="cols">
+<div>
+<span class="eyebrow" data-i18n="ct_k">Kontakt</span>
+<h2 data-i18n="ct_h" style="margin-top:12px">Vyzkoušejte Axion na vlastních modelech</h2>
+<p class="lead" data-i18n="ct_p">Napište nám a připravíme ukázku na vašich dílech, výkresech a firemních normách.</p>
+<div style="margin-top:26px"><a class="btn primary" href="mailto:info@lmd-technologies.cz?subject=Axion%20demo"><span data-i18n="cta_demo">Domluvit ukázku</span><span class="arrow">→</span></a></div>
+</div>
+<div class="contact">
+<div class="ci"><div><small>E-mail</small><strong id="mail">info@lmd-technologies.cz</strong></div><button class="copy" data-i18n="copy" id="copy" type="button">Kopírovat</button></div>
+<div class="ci"><div><small>Web</small><strong><a href="https://www.lmd-technologies.cz" rel="noopener" target="_blank">www.lmd-technologies.cz</a></strong></div><span aria-hidden="true">↗</span></div>
+<div class="ci"><div class="dev"><img alt="LMD Technologies s.r.o." loading="lazy" src="../../assets/img/lmd-technologies-s-r-o.png"/><div><small data-i18n="dev">Vyvíjí</small><strong>LMD Technologies s.r.o.</strong></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer><div class="wrap"><span data-i18n="ft1">© 2026 LMD Technologies s.r.o. · Axion pro SOLIDWORKS</span><span data-i18n="ft2">Přesnost v každé ose. Akce na každý příkaz.</span></div></footer>
+<script src="../../assets/site.js"></script>
+</body>
+</html>

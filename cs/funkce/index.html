@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="cs" data-site="cs">
+<head>
+<meta charset="utf-8"/>
+<!-- seo -->
+<title>Funkce: kontrola výkresů, vyrobitelnost, normy | Axion</title>
+<meta name="description" content="Co Axion umí v SOLIDWORKS: čte živou geometrii a výkresy, kontroluje normy (ISO 2768, ISO 286) a vyrobitelnost, odhadne cenu, generuje výkresy a najde podobné díly.">
+<link rel="canonical" href="https://axion-cad.com/cs/funkce/">
+<link rel="alternate" hreflang="en" href="https://axion-cad.com/features/">
+<link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/funkce/">
+<link rel="alternate" hreflang="x-default" href="https://axion-cad.com/features/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Axion">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:title" content="Funkce: kontrola výkresů, vyrobitelnost, normy | Axion">
+<meta property="og:description" content="Co Axion umí v SOLIDWORKS: čte živou geometrii a výkresy, kontroluje normy (ISO 2768, ISO 286) a vyrobitelnost, odhadne cenu, generuje výkresy a najde podobné díly.">
+<meta property="og:url" content="https://axion-cad.com/cs/funkce/">
+<meta property="og:image" content="https://axion-cad.com/assets/og-cs.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<meta name="theme-color" content="#1F6FD6">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://www.lmd-technologies.cz/#org", "name": "LMD Technologies s.r.o.", "url": "https://www.lmd-technologies.cz", "email": "info@lmd-technologies.cz", "logo": "https://axion-cad.com/assets/img/lmd-technologies-s-r-o.png", "address": {"@type": "PostalAddress", "addressLocality": "Praha", "addressCountry": "CZ"}}, {"@type": "WebSite", "name": "Axion", "url": "https://axion-cad.com/cs/", "inLanguage": "cs", "publisher": {"@id": "https://www.lmd-technologies.cz/#org"}}]}</script>
+<!-- /seo -->
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../../assets/site.css" rel="stylesheet"/>
+</head>
+<body data-page="features">
+<header class="nav">
+<div class="wrap">
+<a aria-label="Axion" class="logo" data-p="../" href="../"><img alt="Axion" height="44" src="../../assets/axion-logo.svg" width="153"/></a>
+<ul>
+<li><a aria-current="page" data-i18n="n1" data-p="../funkce/" href="../funkce/">Funkce</a></li>
+<li><a data-i18n="n7" data-p="../propojeni/" href="../propojeni/">Propojení</a></li>
+<li><a data-i18n="n5" data-p="../z-praxe/" href="../z-praxe/">Z praxe</a></li>
+<li><a data-i18n="n8" data-p="../nasazeni/" href="../nasazeni/">Nasazení</a></li>
+</ul>
+<div class="right">
+<button aria-expanded="false" aria-label="Menu" class="burger" id="burger" type="button"><i></i><i></i><i></i></button>
+<div class="lang" role="group" aria-label="Language"><a href="https://axion-cad.com/features/" hreflang="en" lang="en">EN</a><a href="https://axion-cad.com/cs/funkce/" hreflang="cs" lang="cs" aria-current="true">CZ</a></div>
+<a class="btn primary sm" data-i18n="cta_demo" href="#contact">Domluvit ukázku</a>
+</div>
+</div>
+</header>
+<main id="top">
+<section class="features first" id="features">
+<div class="wrap">
+<div class="sh"><span class="eyebrow" data-i18n="f_k">Schopnosti</span><h1 data-i18n="f_h">Jeden asistent. Každý krok od modelu po výrobu.</h1></div>
+<div class="bento">
+<article class="card w4">
+<span class="k" data-i18n="c1k">Živá geometrie</span>
+<h3 data-i18n="c1h">Vidí, jak je model postavený</h3>
+<p data-i18n-html="c1p">Nevidí jen obrázek dílu, ale <strong>živou geometrii</strong>: strom prvků, jak je díl postavený a jak je složená sestava. Proto radí <strong>u konkrétního prvku</strong>.</p>
+<div class="viz tree"><div>▸ Part1</div><div>  Base-Flange1</div><div class="hl">  Edge-Flange2 <em data-i18n="c1t">R0,5 je na t = 3 mm málo</em></div><div>  Cut-Extrude3 · 4× Ø9</div><div>  Fillet1 · R2</div><div>  Flat-Pattern1</div><div>  Material &lt;S235JR&gt;</div></div>
+</article>
+<article class="card">
+<span class="k" data-i18n="c2k">Porozumění výkresu</span>
+<h3 data-i18n="c2h">Rozumí výkresu, nečte obrázek</h3>
+<p data-i18n-html="c2p">Žádné OCR. Axion čte <strong>značky a jejich vazby na geometrii</strong>: ví, že Ra 0,2 je na výřezu R17 plechového dílu, kde je taková drsnost zbytečně drahá.</p>
+<div class="viz ra"><img alt="Drawing detail: Ra 0.2 surface symbol pointing to the R17 cut-out of a sheet-metal part" height="509" loading="lazy" src="../../assets/img/drawing-detail-ra-0-2-surface.png" width="540"/><svg aria-hidden="true" viewbox="0 0 540 509"><path class="arc" d="M273 257 A76 76 0 0 1 425 257"></path><rect class="sym" height="104" rx="10" width="236" x="104" y="274"></rect></svg><span class="flag" data-i18n="c2f">Ra 0,2 → výřez R17</span></div>
+</article>
+<article class="card w3">
+<span class="k" data-i18n="c3k">Vyrobitelnost</span>
+<h3 data-i18n="c3h">Myslí na výrobu jako první</h3>
+<p data-i18n-html="c3p">Podle <strong>možností vaší výroby</strong> upozorní na prvky, které se špatně vyrábějí, jsou zbytečně drahé nebo u nich hrozí reklamace.</p>
+<div class="viz"><div class="chips"><span data-i18n="ch1">R1 &lt; nástroj R3</span><span data-i18n="ch2">Hloubka díry 10×D</span><span data-i18n="ch3">Stěna 1,2 mm OK</span></div></div>
+</article>
+<article class="card w3">
+<span class="k" data-i18n="c4k">Cena</span>
+<h3 data-i18n="c4h">Zná cenu a ví, jak ji snížit</h3>
+<p data-i18n-html="c4p">Odhadne <strong>cenu výroby</strong> z geometrie, materiálu a tolerancí, zpřesní ji podle <strong>vašich ceníků, nabídek nebo dat z ERP</strong> a navrhne levnější výrobní řešení.</p>
+<div class="viz costs"><div><span data-i18n="m1">Obrábění</span><i><b style="width:92%"></b></i><span>75 €</span></div><div><span data-i18n="m2">Plech</span><i><b style="width:38%"></b></i><span>31 €</span></div><div class="save"><span data-i18n="m3">Použít hotový díl</span><i><b style="width:12%"></b></i><span>10 €</span></div></div>
+</article>
+<article class="card">
+<span class="k" data-i18n="c5k">Normy</span>
+<h3 data-i18n="c5h">Hlídá normy a kvalitu dat</h3>
+<p data-i18n="c5p">Kontroluje výkresy, díly, sestavy i dokumenty podle technických norem a firemních pravidel a výsledek ukáže v přehledné tabulce OK / NOK.</p>
+<div class="viz okl"><div><span>ISO 2768-m</span><b class="ok">OK</b></div><div><span data-i18n="o2">Formát listu A3</span><b class="ok">OK</b></div><div><span data-i18n="o3">Razítko · materiál</span><b class="nok">NOK</b></div></div>
+</article>
+<article class="card">
+<span class="k" data-i18n="c6k">Výkresy</span>
+<h3 data-i18n="c6h">Výkresy za zlomek času</h3>
+<p data-i18n="c6p">Pohledy, měřítko, kóty, kusovník i rozvin podle vašich firemních šablon. Vy už jen dolaďujete.</p>
+<div class="viz"><div class="chips"><span data-i18n="d1">3 pohledy · 1:2</span><span data-i18n="d2">Kóty</span><span data-i18n="d3">Kusovník</span><span data-i18n="d4">Rozvin</span><span>DXF</span></div></div>
+</article>
+<article class="card">
+<span class="k" data-i18n="c7k">Znovupoužití</span>
+<h3 data-i18n="c7h">Nekreslete totéž dvakrát</h3>
+<p data-i18n="c7p">Najde v databázi tvarově podobné díly a protikusy.</p>
+<div class="viz sim"><div><svg viewbox="0 0 60 50"><path d="M6 42 V14 H54 V42 Z M22 14 V6 H38 V14" fill="none" stroke="#3CC8F0" stroke-width="2"></path></svg><b>96%</b></div><div><svg viewbox="0 0 60 50"><path d="M6 42 V16 H54 V42 Z" fill="none" stroke="#2F7BFF" stroke-width="2"></path><circle cx="30" cy="29" fill="none" r="5" stroke="#2F7BFF" stroke-width="2"></circle></svg><b>88%</b></div><div><svg viewbox="0 0 60 50"><path d="M6 42 V20 H54 V42 Z" fill="none" stroke="#93A3BC" stroke-width="2"></path></svg><b>71%</b></div></div>
+</article>
+<article class="card w3">
+<span class="k" data-i18n="c8k">Modelování</span>
+<h3 data-i18n="c8h">A když potřebujete, i vymodeluje</h3>
+<p data-i18n="c8p">Z výkresu nebo zadání postaví díl s plně určenými skicami a materiálem. Rychlý start, který pak upravíte podle sebe.</p>
+</article>
+<article class="card w3">
+<span class="k" data-i18n="c9k">Lokálně</span>
+<h3 data-i18n="c9h">Vaše data zůstávají vaše</h3>
+<p data-i18n="c9p">Většina funkcí běží lokálně v add-inu, bez AI a bez odesílání dat. Poskytovatel AI se zapojí jen v chatu a jen s tím, co dotaz potřebuje.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="ui" id="panel">
+<div class="wrap">
+<div class="sh"><span class="eyebrow" data-i18n="u_k">Panel</span><h2 data-i18n="u_h">Takhle Axion vypadá v SOLIDWORKS.</h2><p data-i18n="u_p">Panel ukotvený vedle modelu. Žádná samostatná aplikace, žádná záložka v prohlížeči.</p></div>
+<div class="grid2">
+<div class="shotf"><img alt="Axion task pane in SOLIDWORKS: menus Design, Analyze, Support, the What I can do overview and the task composer" height="915" loading="lazy" src="../../assets/img/axion-task-pane-in-solidworks-menus.png" width="688"/>
+<button class="hot" data-u="1" style="left:76%;top:9%" type="button">1</button>
+<button class="hot" data-u="2" style="left:63%;top:57%" type="button">2</button>
+<button class="hot" data-u="3" style="left:62%;top:93.5%" type="button">3</button>
+<button class="hot" data-u="4" style="left:97%;top:8.5%" type="button">4</button>
+</div>
+<ol>
+<li data-u="1"><span>1</span><div><h3 data-i18n="u1h">Navrhovat · Analyzovat · Podpora</h3><p data-i18n="u1p">Nástroje seskupené tak, jak konstruktér pracuje: modelování a výkresy, kontroly a výpočty, nápověda a kontakt.</p></div></li>
+<li data-u="2"><span>2</span><div><h3 data-i18n="u2h">Co umím</h3><p data-i18n="u2p">Modelování, výkresy, sestavy, normy a výpočty, AI asistent. Přehled se přizpůsobí funkcím, které u vás nasadíme.</p></div></li>
+<li data-u="3"><span>3</span><div><h3 data-i18n="u3h">Zadání běžnou řečí</h3><p data-i18n="u3p">Popište úkol vlastními slovy nebo přiložte výkres. Poskytovatele AI si vyberete sami.</p></div></li>
+<li data-u="4"><span>4</span><div><h3 data-i18n="u4h">Nastavení pro každého uživatele</h3><p data-i18n="u4p">Velikost písma celého panelu a firemní pravidla, šablony a zdroje dat.</p></div></li>
+</ol>
+</div>
+</div>
+</section>
+<section class="demo" id="demo">
+<div class="wrap">
+<div class="sh"><span class="eyebrow" data-i18n="d_k">Ukázka</span><h2 data-i18n="d_h">Ptejte se běžnou řečí. Dostanete odborné odpovědi.</h2></div>
+<div class="tabs" role="tablist">
+<button aria-selected="true" data-i18n="tb1" data-tab="check" id="t-check" role="tab" type="button">Kontrola výkresu</button>
+<button aria-selected="false" data-i18n="tb2" data-tab="dfm" id="t-dfm" role="tab" type="button">Vyrobitelnost</button>
+<button aria-selected="false" data-i18n="tb3" data-tab="sim" id="t-sim" role="tab" type="button">Podobné díly</button>
+</div>
+<div class="tabpanel" id="tp" role="tabpanel">
+<div><h3 id="tp-h"></h3><p id="tp-p"></p></div>
+<div class="out"><div class="q" id="tp-q"></div><table><thead><tr><th id="th1"></th><th id="th2"></th><th id="th3"></th></tr></thead><tbody id="tp-b"></tbody></table></div>
+</div>
+</div>
+</section>
+<section class="nextp"><div class="wrap"><a data-p="../propojeni/" href="../propojeni/"><div><small data-i18n="nx_k">Pokračujte</small><strong data-i18n="x2k">Propojení</strong><em data-i18n="x2h">Celá firma na jednom místě</em></div><span class="ar">→</span></a></div></section>
+<section class="faq" id="faq">
+<div class="wrap grid">
+<div class="sh"><span class="eyebrow">FAQ</span><h2 data-i18n="q_h">Na co se konstruktéři ptají</h2></div>
+<div>
+<details open=""><summary data-i18n="q1">Je Axion jen další AI, která modeluje díly?</summary><p data-i18n="a1">Ne. Modelování je jedna z funkcí. Hlavní hodnota je v propojení dat: čtení živé geometrie a výkresů, kontrola norem a vyrobitelnosti, odhad ceny a znovupoužití existujících dílů.</p></details>
+<details><summary data-i18n="q4">Umí se řídit našimi normami a šablonami?</summary><p data-i18n="a4">Ano. Šablony, formáty listů, materiály, pravidla i zdroje dat pro kontroly se nastaví pro vaši firmu, aby výsledky odpovídaly tomu, jak pracujete.</p></details>
+<details><summary data-i18n="q8">V jakých jazycích Axion funguje?</summary><p data-i18n="a8">Axion funguje v češtině i angličtině, v panelu i v chatu. Další jazyky doplníme podle přání zákazníka.</p></details>
+<details><summary data-i18n="q5">Jak začít?</summary><p data-i18n="a5">Domluvte si ukázku. Předvedeme Axion na vašich dílech a výkresech a nastavíme ho podle vašich norem.</p></details>
+</div>
+</div>
+</section>
+<section class="final" id="contact">
+<div class="wrap">
+<div class="cta-box">
+<div class="cols">
+<div>
+<span class="eyebrow" data-i18n="ct_k">Kontakt</span>
+<h2 data-i18n="ct_h" style="margin-top:12px">Vyzkoušejte Axion na vlastních modelech</h2>
+<p class="lead" data-i18n="ct_p">Napište nám a připravíme ukázku na vašich dílech, výkresech a firemních normách.</p>
+<div style="margin-top:26px"><a class="btn primary" href="mailto:info@lmd-technologies.cz?subject=Axion%20demo"><span data-i18n="cta_demo">Domluvit ukázku</span><span class="arrow">→</span></a></div>
+</div>
+<div class="contact">
+<div class="ci"><div><small>E-mail</small><strong id="mail">info@lmd-technologies.cz</strong></div><button class="copy" data-i18n="copy" id="copy" type="button">Kopírovat</button></div>
+<div class="ci"><div><small>Web</small><strong><a href="https://www.lmd-technologies.cz" rel="noopener" target="_blank">www.lmd-technologies.cz</a></strong></div><span aria-hidden="true">↗</span></div>
+<div class="ci"><div class="dev"><img alt="LMD Technologies s.r.o." loading="lazy" src="../../assets/img/lmd-technologies-s-r-o.png"/><div><small data-i18n="dev">Vyvíjí</small><strong>LMD Technologies s.r.o.</strong></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer><div class="wrap"><span data-i18n="ft1">© 2026 LMD Technologies s.r.o. · Axion pro SOLIDWORKS</span><span data-i18n="ft2">Přesnost v každé ose. Akce na každý příkaz.</span></div></footer>
+<script src="../../assets/site.js"></script>
+</body>
+</html>
