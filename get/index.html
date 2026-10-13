@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Download Axion</title>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<style>
+:root{--bg:#F3F6FA;--card:#fff;--ink:#0F172A;--muted:#475569;--accent:#2F7BFF}
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--bg);color:var(--ink);font-family:"Segoe UI",system-ui,Arial,sans-serif}
+.c{max-width:480px;margin:16px;background:var(--card);border-radius:14px;padding:28px 30px;box-shadow:0 10px 30px rgba(14,39,71,.12)}
+img{height:28px;display:block;margin-bottom:18px}
+h1{font-size:21px;margin:0 0 8px}p{margin:0 0 10px;line-height:1.55;color:var(--muted)}
+a.b{display:inline-block;margin-top:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:10px 20px;border-radius:9px}
+</style>
+</head>
+<body>
+<div class="c">
+<img src="/assets/axion-logo.svg" alt="Axion">
+<h1 id="h">Your download is starting…</h1>
+<p id="p">Stahování začíná… If nothing happens, use the button below.</p>
+<a class="b" id="a" href="/" hidden>Download Axion</a>
+<noscript><p>Please enable JavaScript to download. · Pro stažení povolte JavaScript.</p></noscript>
+</div>
+<script>
+(function(){
+  // Odkaz z e-mailu: https://axion-cad.com/get/#<token>  → licenční server /d/<token>
+  var SERVER="https://axion-license.michal-9fb.workers.dev";
+  var t=(location.hash||"").slice(1).replace(/[^A-Za-z0-9_-]/g,"");
+  var a=document.getElementById("a");
+  if(!t){document.getElementById("h").textContent="Invalid download link";
+    document.getElementById("p").textContent="Request the trial again at axion-cad.com. · Odkaz není platný – o zkušební verzi požádejte znovu na axion-cad.com.";
+    a.href="/";a.textContent="axion-cad.com";a.hidden=false;return}
+  a.href=SERVER+"/d/"+t;a.hidden=false;
+  setTimeout(function(){location.href=a.href},400);
+})();
+</script>
+</body>
+</html>
