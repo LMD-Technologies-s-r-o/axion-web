@@ -18,6 +18,8 @@ Web produktu **Axion** (LMD Technologies s.r.o.) na **https://axion-cad.com**. O
   + změna `DOWNLOAD_URL` v repu `axion-license` (wrangler.toml); starý soubor smazat.
 - `terms/` (`/cs/podminky/`), `privacy/` (`/cs/ochrana-udaju/`) – podmínky a zásady ochrany údajů; odkazy v patičce všech stránek.
   Při změně podmínek změnit datum na stránce i `TERMS` v `assets/site.js` (verze souhlasu ukládaná serverem).
+- `guide/` (`/cs/navod/`): uživatelská příručka – odkaz v patičce, na stránce stažení a ve všech e-mailech licenčního serveru.
+  Při změně menu nebo průvodce v Axionu aktualizovat i příručku.
 - Tlačítka: menu = Stáhnout demo; úvod = Stáhnout demo zdarma + Domluvit schůzku; kontaktní box = verze na míru (schůzka).
 
 ## Struktura

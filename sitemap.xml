@@ -32,6 +32,10 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/privacy/"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/ochrana-udaju/"/>
   </url>
+  <url><loc>https://axion-cad.com/guide/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/guide/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/navod/"/>
+  </url>
   <url><loc>https://axion-cad.com/cs/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/"/>
@@ -63,5 +67,9 @@
   <url><loc>https://axion-cad.com/cs/ochrana-udaju/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/privacy/"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/ochrana-udaju/"/>
+  </url>
+  <url><loc>https://axion-cad.com/cs/navod/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/guide/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/navod/"/>
   </url>
 </urlset>

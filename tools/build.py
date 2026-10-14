@@ -23,7 +23,8 @@ OLD_CS_DOM = "https://axion-cad.cz/"
 # page id -> (en path, cs path)
 PATHS = {"home": ("", ""), "features": ("features/", "funkce/"), "integrations": ("integrations/", "propojeni/"),
          "cases": ("cases/", "z-praxe/"), "deployment": ("deployment/", "nasazeni/"),
-         "download": ("download/", "stazeni/"), "terms": ("terms/", "podminky/"), "privacy": ("privacy/", "ochrana-udaju/")}
+         "download": ("download/", "stazeni/"), "terms": ("terms/", "podminky/"), "privacy": ("privacy/", "ochrana-udaju/"),
+         "guide": ("guide/", "navod/")}
 
 PAGES = {
  "home": {
@@ -60,7 +61,11 @@ PAGES = {
   "cs": ("Podmínky užívání a zkušební licence | Axion", "Podmínky užívání webu axion-cad.com a bezplatné zkušební licence Axionu.")},
  "privacy": {
   "en": ("Privacy policy | Axion", "How LMD Technologies s.r.o. processes personal data for the Axion trial, licences and website."),
-  "cs": ("Zásady ochrany osobních údajů | Axion", "Jak LMD Technologies s.r.o. zpracovává osobní údaje u zkušební verze, licencí a webu Axion.")},
+  "cs": ("Zásady ochrany osobních údajů | Axion", "Jak LMD Technologies s.r.o. zpracovává osobní údaje u zkušební verze, licencí a webu Axion.")}, "guide": {
+  "en": ("Axion user guide – installation, activation, first steps | Axion",
+         "How to install and activate Axion in SOLIDWORKS, set up your AI key and work with the panel, menus and similar parts."),
+  "cs": ("Uživatelská příručka Axionu – instalace, aktivace, první kroky | Axion",
+         "Jak nainstalovat a aktivovat Axion v SOLIDWORKS, nastavit klíč k AI a pracovat s panelem, nabídkami a podobnými díly.")},
 }
 
 # site-verification meta tags (search engines), per language, home page only

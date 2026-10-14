@@ -794,3 +794,11 @@ footer .flinks{display:flex;gap:16px}footer .flinks a{color:inherit;text-decorat
 .cta-box .btn.ghost{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.28)}
 .cta-box .btn.ghost:hover{background:rgba(255,255,255,.12);border-color:#5ED0F5}
 .cta-box .cta{display:flex;gap:12px;flex-wrap:wrap}
+
+/* user guide */
+.guide .gtoc{background:var(--panel);border:1px solid var(--line-2);border-radius:14px;padding:16px 22px;margin:0 0 10px}
+.guide .gtoc ol{margin:0;padding-left:1.2em;columns:2;column-gap:28px}
+.guide .gtoc a{color:var(--blue);text-decoration:none}.guide .gtoc a:hover{text-decoration:underline}
+.guide article h2{scroll-margin-top:90px}
+.guide article ol,.guide article ul{padding-left:1.3em}.guide article li{margin:4px 0}
+@media (max-width:640px){.guide .gtoc ol{columns:1}}

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- seo -->
+<title>Axion user guide – installation, activation, first steps | Axion</title>
+<meta name="description" content="How to install and activate Axion in SOLIDWORKS, set up your AI key and work with the panel, menus and similar parts.">
+<link rel="canonical" href="https://axion-cad.com/guide/">
+<link rel="alternate" hreflang="en" href="https://axion-cad.com/guide/">
+<link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/navod/">
+<link rel="alternate" hreflang="x-default" href="https://axion-cad.com/guide/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Axion">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Axion user guide – installation, activation, first steps | Axion">
+<meta property="og:description" content="How to install and activate Axion in SOLIDWORKS, set up your AI key and work with the panel, menus and similar parts.">
+<meta property="og:url" content="https://axion-cad.com/guide/">
+<meta property="og:image" content="https://axion-cad.com/assets/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta name="theme-color" content="#1F6FD6">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://www.lmd-technologies.cz/#org", "name": "LMD Technologies s.r.o.", "url": "https://www.lmd-technologies.cz", "email": "info@lmd-technologies.cz", "logo": "https://axion-cad.com/assets/img/lmd-technologies-s-r-o.png", "address": {"@type": "PostalAddress", "addressLocality": "Praha", "addressCountry": "CZ"}}, {"@type": "WebSite", "name": "Axion", "url": "https://axion-cad.com/", "inLanguage": "en", "publisher": {"@id": "https://www.lmd-technologies.cz/#org"}}]}</script>
+<!-- /seo -->
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body data-page="guide">
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="../" data-p="../" aria-label="Axion"><img src="../assets/axion-logo.svg" alt="Axion" width="153" height="44"></a>
+    <ul>
+      <li><a href="../features/" data-p="../features/" data-i18n="n1">Features</a></li>
+      <li><a href="../integrations/" data-p="../integrations/" data-i18n="n7">Integrations</a></li>
+      <li><a href="../cases/" data-p="../cases/" data-i18n="n5">Real cases</a></li>
+      <li><a href="../deployment/" data-p="../deployment/" data-i18n="n8">Deployment</a></li>
+    </ul>
+    <div class="right">
+      <button type="button" class="burger" id="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+        <div class="lang" role="group" aria-label="Language"><a href="https://axion-cad.com/guide/" hreflang="en" lang="en" aria-current="true">EN</a><a href="https://axion-cad.com/cs/navod/" hreflang="cs" lang="cs">CZ</a></div>
+      <a class="btn primary sm" href="../download/" data-p="../download/" data-i18n="cta_dl">Download demo</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="first legal guide">
+  <div class="wrap">
+    <div class="sh">
+      <span class="eyebrow" data-i18n="g_k">Help</span>
+      <h1 data-i18n="g_t">Axion user guide</h1>
+      <p class="upd" data-i18n="g_lead">Installation, activation, first start and everyday work with Axion in SOLIDWORKS.</p>
+    </div>
+    <article>
+      <nav class="gtoc"><ol><li><a href="#req" data-i18n="g_toc_req">What you need</a></li><li><a href="#install" data-i18n="g_toc_install">Installation</a></li><li><a href="#activate" data-i18n="g_toc_activate">Activation</a></li><li><a href="#setup" data-i18n="g_toc_setup">First start</a></li><li><a href="#work" data-i18n="g_toc_work">Working with Axion</a></li><li><a href="#index" data-i18n="g_toc_index">Similar parts and the shape index</a></li><li><a href="#data" data-i18n="g_toc_data">Your data</a></li><li><a href="#licence" data-i18n="g_toc_licence">Licence and the end of the trial</a></li><li><a href="#uninstall" data-i18n="g_toc_uninstall">Uninstalling</a></li><li><a href="#help" data-i18n="g_toc_help">Help and contact</a></li></ol></nav>
+      <h2 data-i18n="g_h_req" id="req">1. What you need</h2>
+<div data-i18n-html="g_p_req"><ul><li>Windows 10 or 11 (64-bit) with SOLIDWORKS installed.</li><li>An internet connection – for activation, the daily licence check and the AI features.</li><li>Your own API key from an AI provider: Anthropic (Claude), OpenAI (ChatGPT), Google (Gemini) or Mistral. How to get one is described in <a href="#setup">First start</a>.</li><li>The activation key <b>AXN-…</b> from the e-mail you received after signing up.</li></ul></div>
+<h2 data-i18n="g_h_install" id="install">2. Installation</h2>
+<div data-i18n-html="g_p_install"><ol><li>Close SOLIDWORKS.</li><li>Run <b>Axion-Demo-Setup.exe</b>. Because Axion is new, Windows or your browser may warn that the file isn't commonly downloaded. The installer is digitally signed by <b>LMD Technologies s.r.o.</b> – choose <b>Keep</b> in the browser and <b>More info → Run anyway</b> in Windows.</li><li>Follow the installer. It registers the Axion add-in in SOLIDWORKS.</li><li>Start SOLIDWORKS. Axion appears in the <b>Task Pane</b> on the right as a tab with the Axion icon.</li></ol><p>If you don't see the panel: in SOLIDWORKS open <b>Tools → Add-ins</b>, tick <b>Axion</b> in both columns (active and Start Up) and click OK.</p></div>
+<h2 data-i18n="g_h_activate" id="activate">3. Activation</h2>
+<div data-i18n-html="g_p_activate"><p>On the first start Axion shows the <b>Activate Axion</b> window. Paste the activation key from the e-mail (best copy and paste it) and click <b>Activate</b>. Activation runs online and binds the licence to this computer.</p><ul><li>The trial runs <b>30 days from activation</b> on one computer. The key must be activated within 14 days of signing up.</li><li>The <b>DEMO · N d</b> badge in the panel header shows the days left; in the last 5 days it turns orange. Click it to see the licence details.</li><li><i>The key is already activated on another computer</i> – one key works on one computer. Write to us if you need to move it.</li><li><i>A trial has already run on this computer</i> – each computer can run one trial. Write to us if you need more time.</li><li><i>Could not reach the licence server</i> – check the internet connection; in a company network the IT department may need to allow the connection.</li></ul></div>
+<h2 data-i18n="g_h_setup" id="setup">4. First start</h2>
+<div data-i18n-html="g_p_setup"><p>After activation the <b>Welcome to Axion</b> wizard guides you through three steps:</p><ol><li><b>Language</b> – Czech or English.</li><li><b>AI provider and API key</b> – choose Claude (most capable), ChatGPT or Gemini (balanced) or Mistral (fastest), paste your API key and click <b>Test connection</b>. The key stays only on your computer, stored encrypted.</li><li><b>Where to save exports</b> – the folder for STEP, DXF, PDF and PNG files. If left empty, files are saved next to the model.</li></ol><p><b>Where to get an API key:</b> <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">Anthropic (Claude)</a> · <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener">OpenAI (ChatGPT)</a> · <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">Google (Gemini)</a> · <a href="https://console.mistral.ai/api-keys" target="_blank" rel="noopener">Mistral</a>. You pay the provider directly; typical costs are a few euros per month per user.</p><p>You can change everything later in <b>Settings</b> (the gear icon in the panel header).</p></div>
+<h2 data-i18n="g_h_work" id="work">5. Working with Axion</h2>
+<div data-i18n-html="g_p_work"><p><b>Chat.</b> Open a part, assembly or drawing and describe the task in your own words, for example <i>“Create a shaft 15 mm in diameter and 120 mm long with a 3 mm chamfer”</i> or <i>“Is this part manufacturable? What would you change?”</i>. Axion reads the live model and works directly in SOLIDWORKS. You can drag a drawing or an image into the panel and ask about it.</p><p><b>Menus</b> in the panel header offer ready-made actions:</p><ul><li><b>Design</b> – model from drawing, generate drawing, exports (STEP, sheet metal flat pattern to DXF, drawing to PDF, model snapshot), standards and calculations (ISO 2768, ISO 286, metric thread, sheet metal bend).</li><li><b>Analyze</b> – assembly interference, fits analysis, mass and center of gravity, measuring holes, DFM check of a plastic part, drawing check against general rules, similar parts, mating parts, rotational parts and the 3D preview.</li><li><b>Company</b> – connections to PDM/CAD data storage, ERP, company standards and central administration. In the trial they are visible but locked 🔒; they are part of the version tailored to your company.</li><li><b>Support</b> – write to us or send feedback.</li></ul><p>Always check the results before using them – Axion is an assistant and the responsibility for designs stays with the engineer.</p></div>
+<h2 data-i18n="g_h_index" id="index">6. Similar parts and the shape index</h2>
+<div data-i18n-html="g_p_index"><p>Similar parts, mating parts and rotational parts search your own parts. Before the first use Axion explains what is needed and asks for your consent: you choose a folder with parts (.sldprt), Axion opens each part read-only, computes its shape fingerprint and saves a small preview. Nothing in the parts is changed. It takes about 1–3 seconds per part and you can stop at any time. The index is stored only on your computer. In the trial the index holds up to 350 parts.</p></div>
+<h2 data-i18n="g_h_data" id="data">7. Your data</h2>
+<div data-i18n-html="g_p_data"><p>Axion runs locally in SOLIDWORKS. Your models, drawings, files and chat history stay on your computer. Only chat questions with the context they need go directly to the AI provider you selected. Details are in the <a href="../privacy/">Privacy policy</a>.</p></div>
+<h2 data-i18n="g_h_licence" id="licence">8. Licence and the end of the trial</h2>
+<div data-i18n-html="g_p_licence"><ul><li>Axion checks the licence online about once a day. Without a connection the trial keeps working for up to 7 days.</li><li>5 days before the end we'll send you an e-mail. If you need more time to evaluate, just reply – we'll gladly extend the trial.</li><li>When the trial ends, Axion shows <b>Your trial has ended</b> and stops working. For the full version tailored to your company, <a href="../#contact">book a meeting</a>.</li></ul></div>
+<h2 data-i18n="g_h_uninstall" id="uninstall">9. Uninstalling</h2>
+<div data-i18n-html="g_p_uninstall"><p>Close SOLIDWORKS, open Windows <b>Settings → Apps → Installed apps</b>, find <b>Axion</b> and choose <b>Uninstall</b>.</p></div>
+<h2 data-i18n="g_h_help" id="help">10. Help and contact</h2>
+<div data-i18n-html="g_p_help"><ul><li><b>The AI does not answer</b> – in Settings click <b>Test connection</b> and check that your API key is valid and has credit with the provider.</li><li><b>The panel is not visible</b> – see <a href="#install">Installation</a>.</li><li><b>Anything else</b> – write to <a href="mailto:info@lmd-technologies.cz">info@lmd-technologies.cz</a> or use <b>Support</b> in the panel. We usually reply within one working day.</li></ul></div>
+    </article>
+  </div>
+</section>
+</main>
+
+
+<footer><div class="wrap"><span data-i18n="ft1">© 2026 LMD Technologies s.r.o. · Axion for SOLIDWORKS</span><span class="flinks"><a href="../guide/" data-p="../guide/" data-i18n="ft_guide">User guide</a><a href="../terms/" data-p="../terms/" data-i18n="ft_terms">Terms of use</a><a href="../privacy/" data-p="../privacy/" data-i18n="ft_priv">Privacy</a></span><span data-i18n="ft2">Precision on every axis. Action on every command.</span></div></footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>
