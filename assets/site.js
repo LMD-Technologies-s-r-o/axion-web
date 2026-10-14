@@ -324,3 +324,69 @@ b.addEventListener("click",function(){var r=window.matchMedia&&matchMedia("(pref
       .then(function(){btn.disabled=false;label.textContent=old});
   });
 })();
+
+/* "Book a meeting" -> request form in a dialog (sent via FormSubmit to info@lmd-technologies.cz) */
+(function(){
+  var cs=document.documentElement.getAttribute("data-site")==="cs",N="\u00a0";
+  var root=cs?"/cs/":"/",priv=root+(cs?"ochrana-udaju/":"privacy/");
+  var L=cs?{h:"Domluvit schůzku",sub:"Ukážeme Axion na vašich dílech a výkresech a domluvíme, jaké funkce, normy a systémy má pokrýt. Ozveme se do 2"+N+"pracovních dnů.",
+      name:"Jméno a příjmení *",company:"Firma *",email:"E-mail *",phone:"Telefon",users:"Počet konstruktérů v"+N+"SOLIDWORKS",pick:"– vyberte –",
+      when:"Kdy se vám to hodí?",whenPh:"např. příští týden odpoledne, online",msg:"Co byste chtěli probrat?",msgPh:"Co děláte, co by vám Axion měl ušetřit, jaké používáte PDM/ERP…",
+      note:"Údaje použijeme jen k"+N+"domluvě schůzky. <a href=\""+priv+"\" target=\"_blank\">Ochrana osobních údajů</a>",send:"Odeslat",busy:"Odesílám…",close:"Zavřít",
+      req:"Vyplňte prosím jméno, firmu a platný e-mail.",fail:"Odeslání se nepovedlo. Zkuste to prosím znovu nebo napište na info@lmd-technologies.cz.",
+      okH:"Děkujeme, máme to",okP:"Ozveme se vám do 2"+N+"pracovních dnů a domluvíme termín.",okB:"Zavřít",subj:"Axion – žádost o schůzku"}
+    :{h:"Book a meeting",sub:"We'll show Axion on your own parts and drawings and agree which functions, standards and systems it should cover. We'll get back to you within 2 working days.",
+      name:"Full name *",company:"Company *",email:"E-mail *",phone:"Phone",users:"Number of SOLIDWORKS designers",pick:"– select –",
+      when:"When suits you?",whenPh:"e.g. next week, afternoons, online",msg:"What would you like to discuss?",msgPh:"What you design, what Axion should save you, which PDM/ERP you use…",
+      note:"We'll use your details only to arrange the meeting. <a href=\""+priv+"\" target=\"_blank\">Privacy policy</a>",send:"Send request",busy:"Sending…",close:"Close",
+      req:"Please fill in your name, company and a valid e-mail.",fail:"Sending failed. Please try again or write to info@lmd-technologies.cz.",
+      okH:"Thank you, request received",okP:"We'll get back to you within 2 working days to agree a date.",okB:"Close",subj:"Axion – meeting request"};
+  var d=null;
+  function build(){
+    d=document.createElement("dialog");d.className="meet";d.setAttribute("aria-labelledby","meet-h");
+    d.innerHTML='<button type="button" class="x" aria-label="'+L.close+'">×</button>'+
+      '<form novalidate><h2 id="meet-h">'+L.h+'</h2><p class="msub">'+L.sub+'</p>'+
+      '<div class="hp" aria-hidden="true"><input type="text" name="_honey" tabindex="-1" autocomplete="off"></div>'+
+      '<div class="two"><div><label for="mt-name">'+L.name+'</label><input id="mt-name" name="name" autocomplete="name" maxlength="100" required></div>'+
+      '<div><label for="mt-company">'+L.company+'</label><input id="mt-company" name="company" autocomplete="organization" maxlength="150" required></div></div>'+
+      '<div class="two"><div><label for="mt-email">'+L.email+'</label><input id="mt-email" name="email" type="email" autocomplete="email" maxlength="254" required></div>'+
+      '<div><label for="mt-phone">'+L.phone+'</label><input id="mt-phone" name="phone" type="tel" autocomplete="tel" maxlength="40"></div></div>'+
+      '<div class="two"><div><label for="mt-users">'+L.users+'</label><select id="mt-users" name="users"><option value="">'+L.pick+'</option><option>1–5</option><option>6–20</option><option>21–50</option><option>50+</option></select></div>'+
+      '<div><label for="mt-when">'+L.when+'</label><input id="mt-when" name="when" maxlength="150" placeholder="'+L.whenPh+'"></div></div>'+
+      '<label for="mt-msg">'+L.msg+'</label><textarea id="mt-msg" name="message" rows="4" maxlength="3000" placeholder="'+L.msgPh+'"></textarea>'+
+      '<div class="mfoot"><p class="mnote">'+L.note+'</p><button class="btn primary" type="submit"><span>'+L.send+'</span><span class="arrow">→</span></button></div>'+
+      '<p class="terr" role="alert" hidden></p></form>'+
+      '<div class="mok" hidden><h2>'+L.okH+'</h2><p>'+L.okP+'</p><button type="button" class="btn primary">'+L.okB+'</button></div>';
+    document.body.appendChild(d);
+    var f=d.querySelector("form"),err=d.querySelector(".terr"),btn=f.querySelector("button[type=submit]"),lab=btn.querySelector("span"),ok=d.querySelector(".mok");
+    function close(){d.close()}
+    d.querySelector(".x").addEventListener("click",close);ok.querySelector("button").addEventListener("click",close);
+    d.addEventListener("click",function(e){if(e.target===d)close()});
+    d.addEventListener("close",function(){if(location.hash==="#meet")history.replaceState(null,"",location.pathname+location.search)});
+    function show(m){err.textContent=m;err.hidden=!m}
+    f.addEventListener("submit",function(e){
+      e.preventDefault();show("");
+      if(!f.name.value.trim()||!f.company.value.trim()||!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email.value.trim())){show(L.req);return}
+      var fd=new FormData(f);
+      fd.append("_subject",L.subj+" – "+f.company.value.trim());fd.append("_template","table");fd.append("_captcha","false");
+      fd.append("_replyto",f.email.value.trim());fd.append("lang",cs?"cs":"en");fd.append("page",location.href);
+      btn.disabled=true;lab.textContent=L.busy;
+      fetch("https://formsubmit.co/ajax/info@lmd-technologies.cz",{method:"POST",body:fd,headers:{"Accept":"application/json"}})
+        .then(function(r){return r.json()})
+        .then(function(j){if(String(j&&j.success)==="true"){f.hidden=true;ok.hidden=false;f.reset();ok.querySelector("button").focus()}else show(L.fail)})
+        .catch(function(){show(L.fail)})
+        .then(function(){btn.disabled=false;lab.textContent=L.send});
+    });
+  }
+  function open(){
+    if(!d)build();
+    var f=d.querySelector("form");f.hidden=false;d.querySelector(".mok").hidden=true;d.querySelector(".terr").hidden=true;
+    if(typeof d.showModal==="function")d.showModal();else d.setAttribute("open","");
+    setTimeout(function(){f.name.focus()},30);
+  }
+  document.addEventListener("click",function(e){
+    var a=e.target.closest&&e.target.closest('[data-meet],a[href="#meet"]');if(!a)return;
+    e.preventDefault();open();
+  });
+  if(location.hash==="#meet")open();
+})();

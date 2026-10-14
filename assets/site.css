@@ -44,8 +44,8 @@ p{margin:0}
 .lang button{border:0;background:transparent;color:var(--muted);font:600 .75rem var(--f-mono);padding:6px 11px;border-radius:999px;cursor:pointer}
 .lang button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:12px;font-weight:700;font-size:.97rem;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
-.btn.primary{background:var(--grad);color:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.08) inset,0 10px 30px -8px rgba(47,123,255,.7)}
-.btn.primary:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(255,255,255,.12) inset,0 16px 40px -8px rgba(47,123,255,.9)}
+.btn.primary{background:var(--grad);background-origin:border-box;color:#fff;box-shadow:0 10px 30px -8px rgba(47,123,255,.7)}
+.btn.primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px -8px rgba(47,123,255,.9)}
 .btn.ghost{border-color:var(--line-2);color:var(--fg);background:rgba(255,255,255,.03)}
 .btn.ghost:hover{border-color:var(--cyan);background:rgba(60,200,240,.06)}
 .btn.sm{padding:9px 16px;font-size:.88rem;border-radius:10px}
@@ -802,3 +802,26 @@ footer .flinks{display:flex;gap:16px}footer .flinks a{color:inherit;text-decorat
 .guide article h2{scroll-margin-top:90px}
 .guide article ol,.guide article ul{padding-left:1.3em}.guide article li{margin:4px 0}
 @media (max-width:640px){.guide .gtoc ol{columns:1}}
+
+/* meeting request dialog */
+.meet{width:min(620px,calc(100vw - 32px));max-height:calc(100vh - 32px);padding:0;border:1px solid var(--line-2);border-radius:20px;background:var(--panel);color:var(--fg);box-shadow:0 40px 90px -30px rgba(10,20,45,.6)}
+.meet::backdrop{background:rgba(8,16,34,.55);backdrop-filter:blur(3px)}
+.meet form,.meet .mok{padding:clamp(22px,4vw,34px)}
+.meet h2{font-size:1.5rem;margin:0 36px 6px 0;letter-spacing:-.02em}
+.meet .msub{color:var(--muted);margin:0 0 20px;font-size:.95rem}
+.meet .x{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:10px;border:1px solid var(--line-2);background:transparent;color:var(--fg);font-size:1.3rem;line-height:1;cursor:pointer}
+.meet .x:hover{border-color:var(--blue)}
+.meet .two{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.meet label{display:block;font-weight:600;font-size:.9rem;margin:0 0 6px}
+.meet input,.meet select,.meet textarea{width:100%;font:inherit;font-size:.97rem;padding:11px 13px;border-radius:10px;border:1px solid var(--line-2);background:var(--panel);color:var(--fg);margin-bottom:14px}
+.meet textarea{resize:vertical;min-height:110px}
+.meet input:focus,.meet select:focus,.meet textarea:focus{outline:2px solid var(--blue);outline-offset:1px}
+.meet .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.meet .mfoot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:4px}
+.meet .mnote{color:var(--muted);font-size:.84rem;margin:0;max-width:300px;line-height:1.5}
+.meet .mnote a{color:var(--blue)}
+.meet .terr{color:var(--nok);font-size:.92rem;margin:12px 0 0}
+.meet .mok h2{margin-bottom:10px}
+.meet .mok p{color:var(--muted);margin:0 0 20px}
+@media (max-width:560px){.meet .two{grid-template-columns:1fr}}
+.steps4 li:first-child::before,.mhub .ax,.case-hd .no,.input i{background-origin:border-box}
