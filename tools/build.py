@@ -47,9 +47,9 @@ PAGES = {
          "Needitované odpovědi Axionu na skutečných dílech a výkresech: vyrobitelnost hřídele, chyby v GD&T, kontrola plechového dílu a modelování z textu nebo obrázku.")},
  "deployment": {
   "en": ("Deploying AI in engineering, tailored and local-first | Axion",
-         "How Axion is built for your company: kick-off, pilot on your parts, rollout. Local-first security, your own AI API key (Claude, Gemini, Mistral) and low running costs."),
+         "How Axion is built for your company: kick-off, pilot on your parts, rollout. Local-first security, your own AI API key (Claude, ChatGPT, Gemini, Mistral) and low running costs."),
   "cs": ("Nasazení AI do konstrukce na míru a bezpečně | Axion",
-         "Jak Axion stavíme pro vaši firmu: úvodní schůzka, pilot na vašich dílech, nasazení. Lokálně od základu, vlastní API klíč k AI (Claude, Gemini, Mistral) a nízké náklady.")},
+         "Jak Axion stavíme pro vaši firmu: úvodní schůzka, pilot na vašich dílech, nasazení. Lokálně od základu, vlastní API klíč k AI (Claude, ChatGPT, Gemini, Mistral) a nízké náklady.")},
 }
 
 # site-verification meta tags (search engines), per language, home page only
