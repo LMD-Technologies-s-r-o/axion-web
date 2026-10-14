@@ -11,6 +11,15 @@ Web produktu **Axion** (LMD Technologies s.r.o.) na **https://axion-cad.com**. O
   Staré odkazy `axion-cad.com/#cs` JS přesměruje na `/cs/`.
 - `CNAME` (`axion-cad.com`) a `.nojekyll` neměnit.
 
+## Demo ke stažení a právní texty
+- `download/` (`/cs/stazeni/`): formulář → licenční server `axion-license` (`/api/trial/register`) → e-mail s odkazem a klíčem.
+  Odkaz z e-mailu vede na `get/#<token>` → server `/d/<token>` → přesměruje na instalátor.
+- Instalátor dema: `dl/Axion-Demo-Setup-<verze>.exe` (podepsaný, mimo vyhledávače – `Disallow: /dl/`). Nová verze = nový soubor
+  + změna `DOWNLOAD_URL` v repu `axion-license` (wrangler.toml); starý soubor smazat.
+- `terms/` (`/cs/podminky/`), `privacy/` (`/cs/ochrana-udaju/`) – podmínky a zásady ochrany údajů; odkazy v patičce všech stránek.
+  Při změně podmínek změnit datum na stránce i `TERMS` v `assets/site.js` (verze souhlasu ukládaná serverem).
+- Tlačítka: menu = Stáhnout demo; úvod = Stáhnout demo zdarma + Domluvit schůzku; kontaktní box = verze na míru (schůzka).
+
 ## Struktura
 - `index.html` (úvod), `features/`, `integrations/`, `cases/`, `deployment/` – anglické stránky (zdroj).
 - `assets/site.css`, `assets/site.js` (+ český slovník `var CS={...}`), `assets/img/`, favicon, `og-*.png` (náhled pro sdílení).

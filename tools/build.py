@@ -195,7 +195,7 @@ def sitemap():
 
 
 def robots():
-    return f"User-agent: *\nAllow: /\n\nSitemap: {EN_DOM}sitemap.xml\n"
+    return f"User-agent: *\nAllow: /\nDisallow: /dl/\n\nSitemap: {EN_DOM}sitemap.xml\n"
 
 
 def page_404(home_html):

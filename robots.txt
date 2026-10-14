@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /dl/
 
 Sitemap: https://axion-cad.com/sitemap.xml
