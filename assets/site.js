@@ -334,13 +334,13 @@ b.addEventListener("click",function(){var r=window.matchMedia&&matchMedia("(pref
       when:"Kdy se vám to hodí?",whenPh:"např. příští týden odpoledne, online",msg:"Co byste chtěli probrat?",msgPh:"Co děláte, co by vám Axion měl ušetřit, jaké používáte PDM/ERP…",
       note:"Údaje použijeme jen k"+N+"domluvě schůzky. <a href=\""+priv+"\" target=\"_blank\">Ochrana osobních údajů</a>",send:"Odeslat",busy:"Odesílám…",close:"Zavřít",
       req:"Vyplňte prosím jméno, firmu a platný e-mail.",fail:"Odeslání se nepovedlo. Zkuste to prosím znovu nebo napište na info@lmd-technologies.cz.",
-      okH:"Děkujeme, máme to",okP:"Ozveme se vám do 2"+N+"pracovních dnů a domluvíme termín.",okB:"Zavřít",subj:"Axion – žádost o schůzku"}
+      okH:"Děkujeme, ozveme se Vám.",okP:"Nejpozději do 2"+N+"pracovních dnů se s"+N+"Vámi spojíme a domluvíme termín.",okB:"Zavřít",subj:"Axion – žádost o schůzku"}
     :{h:"Book a meeting",sub:"We'll show Axion on your own parts and drawings and agree which functions, standards and systems it should cover. We'll get back to you within 2 working days.",
       name:"Full name *",company:"Company *",email:"E-mail *",phone:"Phone",users:"Number of SOLIDWORKS designers",pick:"– select –",
       when:"When suits you?",whenPh:"e.g. next week, afternoons, online",msg:"What would you like to discuss?",msgPh:"What you design, what Axion should save you, which PDM/ERP you use…",
       note:"We'll use your details only to arrange the meeting. <a href=\""+priv+"\" target=\"_blank\">Privacy policy</a>",send:"Send request",busy:"Sending…",close:"Close",
       req:"Please fill in your name, company and a valid e-mail.",fail:"Sending failed. Please try again or write to info@lmd-technologies.cz.",
-      okH:"Thank you, request received",okP:"We'll get back to you within 2 working days to agree a date.",okB:"Close",subj:"Axion – meeting request"};
+      okH:"Thank you, we'll be in touch.",okP:"We'll contact you within 2 working days to arrange a date.",okB:"Close",subj:"Axion – meeting request"};
   var d=null;
   function build(){
     d=document.createElement("dialog");d.className="meet";d.setAttribute("aria-labelledby","meet-h");
