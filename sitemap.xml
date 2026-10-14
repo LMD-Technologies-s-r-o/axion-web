@@ -20,6 +20,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/deployment/"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/nasazeni/"/>
   </url>
+  <url><loc>https://axion-cad.com/download/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/download/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/stazeni/"/>
+  </url>
+  <url><loc>https://axion-cad.com/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/terms/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/podminky/"/>
+  </url>
+  <url><loc>https://axion-cad.com/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/ochrana-udaju/"/>
+  </url>
   <url><loc>https://axion-cad.com/cs/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/"/>
@@ -39,5 +51,17 @@
   <url><loc>https://axion-cad.com/cs/nasazeni/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/deployment/"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/nasazeni/"/>
+  </url>
+  <url><loc>https://axion-cad.com/cs/stazeni/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/download/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/stazeni/"/>
+  </url>
+  <url><loc>https://axion-cad.com/cs/podminky/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/terms/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/podminky/"/>
+  </url>
+  <url><loc>https://axion-cad.com/cs/ochrana-udaju/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/ochrana-udaju/"/>
   </url>
 </urlset>

@@ -22,7 +22,8 @@ OLD_CS_DOM = "https://axion-cad.cz/"
 
 # page id -> (en path, cs path)
 PATHS = {"home": ("", ""), "features": ("features/", "funkce/"), "integrations": ("integrations/", "propojeni/"),
-         "cases": ("cases/", "z-praxe/"), "deployment": ("deployment/", "nasazeni/")}
+         "cases": ("cases/", "z-praxe/"), "deployment": ("deployment/", "nasazeni/"),
+         "download": ("download/", "stazeni/"), "terms": ("terms/", "podminky/"), "privacy": ("privacy/", "ochrana-udaju/")}
 
 PAGES = {
  "home": {
@@ -49,7 +50,17 @@ PAGES = {
   "en": ("Deploying AI in engineering, tailored and local-first | Axion",
          "How Axion is built for your company: kick-off, pilot on your parts, rollout. Local-first security, your own AI API key (Claude, Gemini, Mistral) and low running costs."),
   "cs": ("Nasazení AI do konstrukce na míru a bezpečně | Axion",
-         "Jak Axion stavíme pro vaši firmu: úvodní schůzka, pilot na vašich dílech, nasazení. Lokálně od základu, vlastní API klíč k AI (Claude, Gemini, Mistral) a nízké náklady.")},
+         "Jak Axion stavíme pro vaši firmu: úvodní schůzka, pilot na vašich dílech, nasazení. Lokálně od základu, vlastní API klíč k AI (Claude, Gemini, Mistral) a nízké náklady.")}, "download": {
+  "en": ("Download Axion – free 30-day trial for SOLIDWORKS | Axion",
+         "Try Axion, the AI design assistant inside SOLIDWORKS, free for 30 days on your own parts and drawings. Download link and activation key by e-mail."),
+  "cs": ("Stáhnout Axion – 30 dní zdarma pro SOLIDWORKS | Axion",
+         "Vyzkoušejte Axion, AI asistenta konstruktéra v SOLIDWORKS, 30 dní zdarma na vlastních dílech a výkresech. Odkaz ke stažení a aktivační klíč e-mailem.")},
+ "terms": {
+  "en": ("Terms of use and trial licence | Axion", "Terms of use of the axion-cad.com website and the free Axion trial licence."),
+  "cs": ("Podmínky užívání a zkušební licence | Axion", "Podmínky užívání webu axion-cad.com a bezplatné zkušební licence Axionu.")},
+ "privacy": {
+  "en": ("Privacy policy | Axion", "How LMD Technologies s.r.o. processes personal data for the Axion trial, licences and website."),
+  "cs": ("Zásady ochrany osobních údajů | Axion", "Jak LMD Technologies s.r.o. zpracovává osobní údaje u zkušební verze, licencí a webu Axion.")},
 }
 
 # site-verification meta tags (search engines), per language, home page only
