@@ -12,28 +12,39 @@ body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--
 .c{max-width:480px;margin:16px;background:var(--card);border-radius:14px;padding:28px 30px;box-shadow:0 10px 30px rgba(14,39,71,.12)}
 img{height:28px;display:block;margin-bottom:18px}
 h1{font-size:21px;margin:0 0 8px}p{margin:0 0 10px;line-height:1.55;color:var(--muted)}
+.note{margin-top:18px;padding:12px 14px;border-radius:10px;background:#F1F5FB;border:1px solid #DCE5F2;font-size:14px;color:#334155;line-height:1.5}.note b{color:#0F172A}
 a.b{display:inline-block;margin-top:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:10px 20px;border-radius:9px}
 </style>
 </head>
 <body>
 <div class="c">
 <img src="/assets/axion-logo.svg" alt="Axion">
-<h1 id="h">Your download is starting…</h1>
-<p id="p">Stahování začíná… If nothing happens, use the button below.</p>
-<a class="b" id="a" href="/" hidden>Download Axion</a>
+<h1 id="h"></h1>
+<p id="p"></p>
+<a class="b" id="a" href="/" hidden></a>
+<div class="note" id="n" hidden></div>
 <noscript><p>Please enable JavaScript to download. · Pro stažení povolte JavaScript.</p></noscript>
 </div>
 <script>
 (function(){
-  // Odkaz z e-mailu: https://axion-cad.com/get/#<token>  → licenční server /d/<token>
+  // Odkaz z e-mailu: https://axion-cad.com/get/?l=cs#<token>  → licenční server /d/<token>
   var SERVER="https://axion-license.michal-9fb.workers.dev";
+  var q=location.search.match(/[?&]l=(cs|en)\b/);
+  var cs=q?q[1]==="cs":/^(cs|sk)\b/i.test(navigator.language||"");
+  document.documentElement.lang=cs?"cs":"en";
+  var T=cs?{h:"Stahování začíná…",p:"Pokud se stahování nespustí samo, použijte tlačítko.",b:"Stáhnout Axion",
+      n:"<b>Windows nebo prohlížeč může upozornit</b>, že soubor se často nestahuje. Axion je nový produkt, proto ho zatím nezná dost lidí. Instalátor je digitálně podepsaný firmou <b>LMD Technologies s.r.o.</b> – v prohlížeči zvolte <b>Ponechat</b>, ve Windows <b>Další informace → Přesto spustit</b>.",
+      xh:"Odkaz není platný",xp:"O zkušební verzi požádejte znovu na axion-cad.com.",home:"/cs/stazeni/"}
+     :{h:"Your download is starting…",p:"If the download doesn't start, use the button below.",b:"Download Axion",
+      n:"<b>Windows or your browser may warn</b> that the file isn't commonly downloaded. Axion is new, so not many people have downloaded it yet. The installer is digitally signed by <b>LMD Technologies s.r.o.</b> – choose <b>Keep</b> in the browser and <b>More info → Run anyway</b> in Windows.",
+      xh:"Invalid download link",xp:"Please request the trial again at axion-cad.com.",home:"/download/"};
+  document.title=(cs?"Stáhnout Axion":"Download Axion");
   var t=(location.hash||"").slice(1).replace(/[^A-Za-z0-9_-]/g,"");
-  var a=document.getElementById("a");
-  if(!t){document.getElementById("h").textContent="Invalid download link";
-    document.getElementById("p").textContent="Request the trial again at axion-cad.com. · Odkaz není platný – o zkušební verzi požádejte znovu na axion-cad.com.";
-    a.href="/";a.textContent="axion-cad.com";a.hidden=false;return}
-  a.href=SERVER+"/d/"+t;a.hidden=false;
-  setTimeout(function(){location.href=a.href},400);
+  var a=document.getElementById("a"),h=document.getElementById("h"),p=document.getElementById("p"),n=document.getElementById("n");
+  if(!t){h.textContent=T.xh;p.textContent=T.xp;a.href=T.home;a.textContent="axion-cad.com";a.hidden=false;return}
+  h.textContent=T.h;p.textContent=T.p;a.textContent=T.b;n.innerHTML=T.n;n.hidden=false;
+  a.href=SERVER+"/d/"+t+(cs?"?l=cs":"");a.hidden=false;
+  setTimeout(function(){location.href=a.href},600);
 })();
 </script>
 </body>
