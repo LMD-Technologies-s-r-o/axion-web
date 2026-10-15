@@ -20,6 +20,9 @@ Web produktu **Axion** (LMD Technologies s.r.o.) na **https://axion-cad.com**. O
   Při změně podmínek změnit datum na stránce i `TERMS` v `assets/site.js` (verze souhlasu ukládaná serverem).
 - `guide/` (`/cs/navod/`): uživatelská příručka – odkaz v patičce, na stránce stažení a ve všech e-mailech licenčního serveru.
   Při změně menu nebo průvodce v Axionu aktualizovat i příručku.
+- Příručka, sekce **5. Modely AI** (`#models`, CZ `/cs/navod/#models`): tabulka modelů, které jde v Axionu vybrat (stav k datu v textu).
+  Při změně nabídky modelů v aplikaci aktualizovat tabulku tady (EN v `guide/index.html`, CZ `g_p_models` v `assets/site.js`)
+  i v e-mailu licenčního serveru (`axion-license/src/mail.js`). Odkazuje na ni Nastavení v Axionu.
 - Tlačítka: menu = Stáhnout demo; úvod = Stáhnout demo zdarma + Domluvit schůzku; kontaktní box = verze na míru (schůzka).
 
 ## Struktura

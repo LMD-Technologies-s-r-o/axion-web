@@ -825,3 +825,14 @@ footer .flinks{display:flex;gap:16px}footer .flinks a{color:inherit;text-decorat
 .meet .mok p{color:var(--muted);margin:0 0 20px}
 @media (max-width:560px){.meet .two{grid-template-columns:1fr}}
 .steps4 li:first-child::before,.mhub .ax,.case-hd .no,.input i{background-origin:border-box}
+
+/* tabulka modelů AI v návodu */
+.guide .tbl{overflow-x:auto;margin:14px 0 6px;border:1px solid var(--line-2);border-radius:12px}
+.guide table.models{width:100%;border-collapse:collapse;font-size:.86rem;min-width:640px;background:var(--panel)}
+.guide table.models th{text-align:left;background:var(--bg);font-weight:600;padding:9px 10px}
+.guide table.models td{padding:9px 10px;border-top:1px solid var(--line-2);vertical-align:top}
+.guide table.models tr.is-rec td{background:rgba(59,130,246,.10)}
+.guide table.models code{font-family:var(--f-mono);font-size:.76rem;color:var(--muted);white-space:nowrap}
+.guide table.models td.num{white-space:nowrap;text-align:right}
+.guide table.models .rec{display:inline-block;font-size:.72rem;color:var(--blue);font-weight:600;margin-left:4px}
+.guide .note{font-size:.84rem;color:var(--muted)}
