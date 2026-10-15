@@ -325,7 +325,7 @@ b.addEventListener("click",function(){var r=window.matchMedia&&matchMedia("(pref
   });
 })();
 
-/* "Book a meeting" -> request form in a dialog (sent via FormSubmit to info@lmd-technologies.cz) */
+/* "Book a meeting" -> request form in a dialog (licence server /api/meet -> e-mail to info@lmd-technologies.cz) */
 (function(){
   var cs=document.documentElement.getAttribute("data-site")==="cs",N="\u00a0";
   var root=cs?"/cs/":"/",priv=root+(cs?"ochrana-udaju/":"privacy/");
@@ -333,13 +333,13 @@ b.addEventListener("click",function(){var r=window.matchMedia&&matchMedia("(pref
       name:"Jméno a příjmení *",company:"Firma *",email:"E-mail *",phone:"Telefon",users:"Počet konstruktérů v"+N+"SOLIDWORKS",pick:"– vyberte –",
       when:"Kdy se vám to hodí?",whenPh:"např. příští týden odpoledne, online",msg:"Co byste chtěli probrat?",msgPh:"Co děláte, co by vám Axion měl ušetřit, jaké používáte PDM/ERP…",
       note:"Údaje použijeme jen k"+N+"domluvě schůzky. <a href=\""+priv+"\" target=\"_blank\">Ochrana osobních údajů</a>",send:"Odeslat",busy:"Odesílám…",close:"Zavřít",
-      req:"Vyplňte prosím jméno, firmu a platný e-mail.",fail:"Odeslání se nepovedlo. Zkuste to prosím znovu nebo napište na info@lmd-technologies.cz.",
+      req:"Vyplňte prosím jméno, firmu a platný e-mail.",rate:"Příliš mnoho pokusů. Zkuste to prosím později nebo napište na info@lmd-technologies.cz.",fail:"Odeslání se nepovedlo. Zkuste to prosím znovu nebo napište na info@lmd-technologies.cz.",
       okH:"Děkujeme, ozveme se Vám.",okP:"Nejpozději do 2"+N+"pracovních dnů se s"+N+"Vámi spojíme a domluvíme termín.",okB:"Zavřít",subj:"Axion – žádost o schůzku"}
     :{h:"Book a meeting",sub:"We'll show Axion on your own parts and drawings and agree which functions, standards and systems it should cover. We'll get back to you within 2 working days.",
       name:"Full name *",company:"Company *",email:"E-mail *",phone:"Phone",users:"Number of SOLIDWORKS designers",pick:"– select –",
       when:"When suits you?",whenPh:"e.g. next week, afternoons, online",msg:"What would you like to discuss?",msgPh:"What you design, what Axion should save you, which PDM/ERP you use…",
       note:"We'll use your details only to arrange the meeting. <a href=\""+priv+"\" target=\"_blank\">Privacy policy</a>",send:"Send request",busy:"Sending…",close:"Close",
-      req:"Please fill in your name, company and a valid e-mail.",fail:"Sending failed. Please try again or write to info@lmd-technologies.cz.",
+      req:"Please fill in your name, company and a valid e-mail.",rate:"Too many attempts. Please try again later or write to info@lmd-technologies.cz.",fail:"Sending failed. Please try again or write to info@lmd-technologies.cz.",
       okH:"Thank you, we'll be in touch.",okP:"We'll contact you within 2 working days to arrange a date.",okB:"Close",subj:"Axion – meeting request"};
   var d=null;
   function build(){
@@ -367,13 +367,12 @@ b.addEventListener("click",function(){var r=window.matchMedia&&matchMedia("(pref
     f.addEventListener("submit",function(e){
       e.preventDefault();show("");
       if(!f.name.value.trim()||!f.company.value.trim()||!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email.value.trim())){show(L.req);return}
-      var fd=new FormData(f);
-      fd.append("_subject",L.subj+" – "+f.company.value.trim());fd.append("_template","table");fd.append("_captcha","false");
-      fd.append("_replyto",f.email.value.trim());fd.append("lang",cs?"cs":"en");fd.append("page",location.href);
+      var v=function(n){return (f[n]&&f[n].value||"").trim()};
+      var data={name:v("name"),company:v("company"),email:v("email"),phone:v("phone"),users:v("users"),when:v("when"),message:v("message"),hp:v("_honey"),lang:cs?"cs":"en",page:location.href};
       btn.disabled=true;lab.textContent=L.busy;
-      fetch("https://formsubmit.co/ajax/info@lmd-technologies.cz",{method:"POST",body:fd,headers:{"Accept":"application/json"}})
-        .then(function(r){return r.json()})
-        .then(function(j){if(String(j&&j.success)==="true"){f.hidden=true;ok.hidden=false;f.reset();ok.querySelector("button").focus()}else show(L.fail)})
+      fetch("https://axion-license.michal-9fb.workers.dev/api/meet",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)})
+        .then(function(r){return r.json().catch(function(){return {ok:false}})})
+        .then(function(j){if(j&&j.ok){f.hidden=true;ok.hidden=false;f.reset();ok.querySelector("button").focus()}else show(j&&j.error==="rate_limited"?L.rate:L.fail)})
         .catch(function(){show(L.fail)})
         .then(function(){btn.disabled=false;lab.textContent=L.send});
     });

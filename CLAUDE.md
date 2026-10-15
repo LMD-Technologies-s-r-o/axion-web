@@ -23,6 +23,7 @@ Web produktu **Axion** (LMD Technologies s.r.o.) na **https://axion-cad.com**. O
 - Příručka, sekce **5. Modely AI** (`#models`, CZ `/cs/navod/#models`): tabulka modelů, které jde v Axionu vybrat (stav k datu v textu).
   Při změně nabídky modelů v aplikaci aktualizovat tabulku tady (EN v `guide/index.html`, CZ `g_p_models` v `assets/site.js`)
   i v e-mailu licenčního serveru (`axion-license/src/mail.js`). Odkazuje na ni Nastavení v Axionu.
+- Formulář „Domluvit schůzku“ (okno, `#meet` ho otevře z odkazu): `assets/site.js` → licenční server `POST /api/meet` → e-mail na info@.
 - Tlačítka: menu = Stáhnout demo; úvod = Stáhnout demo zdarma + Domluvit schůzku; kontaktní box = verze na míru (schůzka).
 
 ## Struktura
