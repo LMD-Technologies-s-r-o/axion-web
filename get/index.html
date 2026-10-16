@@ -28,7 +28,7 @@ a.b{display:inline-block;margin-top:8px;background:var(--accent);color:#fff;text
 <script>
 (function(){
   // Odkaz z e-mailu: https://axion-cad.com/get/?l=cs#<token>  → licenční server /d/<token>
-  var SERVER="https://axion-license.michal-9fb.workers.dev";
+  var SERVER="https://license.axion-cad.com";
   var q=location.search.match(/[?&]l=(cs|en)\b/);
   var cs=q?q[1]==="cs":/^(cs|sk)\b/i.test(navigator.language||"");
   document.documentElement.lang=cs?"cs":"en";

@@ -302,7 +302,7 @@ b.addEventListener("click",function(){var r=window.matchMedia&&matchMedia("(pref
 /* trial registration (download page) -> licence server */
 (function(){
   var f=document.getElementById("trialForm");if(!f)return;
-  var API="https://axion-license.michal-9fb.workers.dev/api/trial/register",TERMS="2026-10-14";
+  var API="https://license.axion-cad.com/api/trial/register",TERMS="2026-10-14";
   var cs=document.documentElement.getAttribute("data-site")==="cs";
   var M=cs?{email:"Zadejte platný e-mail.",consent:"Pro stažení je potřeba souhlas s podmínkami.",rate_limited:"Příliš mnoho pokusů. Zkuste to prosím později.",mail_failed:"E-mail se nepodařilo odeslat. Zkuste to prosím znovu nebo nám napište na info@lmd-technologies.cz.",other:"Něco se nepovedlo. Zkuste to prosím znovu nebo nám napište na info@lmd-technologies.cz.",busy:"Odesílám…"}
               :{email:"Please enter a valid e-mail.",consent:"Please agree to the terms to download.",rate_limited:"Too many attempts. Please try again later.",mail_failed:"We couldn't send the e-mail. Please try again or write to info@lmd-technologies.cz.",other:"Something went wrong. Please try again or write to info@lmd-technologies.cz.",busy:"Sending…"};
@@ -370,7 +370,7 @@ b.addEventListener("click",function(){var r=window.matchMedia&&matchMedia("(pref
       var v=function(n){return (f[n]&&f[n].value||"").trim()};
       var data={name:v("name"),company:v("company"),email:v("email"),phone:v("phone"),users:v("users"),when:v("when"),message:v("message"),hp:v("_honey"),lang:cs?"cs":"en",page:location.href};
       btn.disabled=true;lab.textContent=L.busy;
-      fetch("https://axion-license.michal-9fb.workers.dev/api/meet",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)})
+      fetch("https://license.axion-cad.com/api/meet",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)})
         .then(function(r){return r.json().catch(function(){return {ok:false}})})
         .then(function(j){if(j&&j.ok){f.hidden=true;ok.hidden=false;f.reset();ok.querySelector("button").focus()}else show(j&&j.error==="rate_limited"?L.rate:L.fail)})
         .catch(function(){show(L.fail)})
