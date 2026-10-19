@@ -891,3 +891,4 @@ footer .flinks{display:flex;gap:16px}footer .flinks a{color:inherit;text-decorat
 .plan.co .price b{font-size:1.3rem;line-height:1.2}
 .plan .tag.soon{background:#64748B}
 .plan.soonplan .buy[disabled]{opacity:.6;cursor:not-allowed}
+@media (min-width:1280px){.pricing .plans{margin-inline:calc((1120px - min(100vw - 96px,1440px))/2);gap:22px}.pricing .plan{padding:28px 28px}.pricing .plan .feat{gap:8px}}
