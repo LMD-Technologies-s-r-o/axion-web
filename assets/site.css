@@ -889,3 +889,5 @@ footer .flinks{display:flex;gap:16px}footer .flinks a{color:inherit;text-decorat
 @media (max-width:700px){.plans,.pr-pay{grid-template-columns:1fr}.plan .who{min-height:0}.pr-bar{flex-direction:column;align-items:center}}
 .pr-faq{padding-block:0!important}
 .plan.co .price b{font-size:1.3rem;line-height:1.2}
+.plan .tag.soon{background:#64748B}
+.plan.soonplan .buy[disabled]{opacity:.6;cursor:not-allowed}
