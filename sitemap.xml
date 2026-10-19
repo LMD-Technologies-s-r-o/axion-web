@@ -36,6 +36,10 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/guide/"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/navod/"/>
   </url>
+  <url><loc>https://axion-cad.com/pricing/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/cenik/"/>
+  </url>
   <url><loc>https://axion-cad.com/cs/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/"/>
@@ -71,5 +75,9 @@
   <url><loc>https://axion-cad.com/cs/navod/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/guide/"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/navod/"/>
+  </url>
+  <url><loc>https://axion-cad.com/cs/cenik/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://axion-cad.com/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://axion-cad.com/cs/cenik/"/>
   </url>
 </urlset>

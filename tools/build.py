@@ -24,7 +24,8 @@ OLD_CS_DOM = "https://axion-cad.cz/"
 PATHS = {"home": ("", ""), "features": ("features/", "funkce/"), "integrations": ("integrations/", "propojeni/"),
          "cases": ("cases/", "z-praxe/"), "deployment": ("deployment/", "nasazeni/"),
          "download": ("download/", "stazeni/"), "terms": ("terms/", "podminky/"), "privacy": ("privacy/", "ochrana-udaju/"),
-         "guide": ("guide/", "navod/")}
+         "guide": ("guide/", "navod/"), "pricing": ("pricing/", "cenik/"), "thanks": ("thank-you/", "dekujeme/")}
+NOINDEX = {"thanks"}                                   # not in sitemap, robots noindex
 
 PAGES = {
  "home": {
@@ -56,9 +57,17 @@ PAGES = {
          "Try Axion, the AI design assistant inside SOLIDWORKS, free for 30 days on your own parts and drawings. Download link and activation key by e-mail."),
   "cs": ("Stáhnout Axion – 30 dní zdarma pro SOLIDWORKS | Axion",
          "Vyzkoušejte Axion, AI asistenta konstruktéra v SOLIDWORKS, 30 dní zdarma na vlastních dílech a výkresech. Odkaz ke stažení a aktivační klíč e-mailem.")},
+ "pricing": {
+  "en": ("Pricing: Start, Plus and Pro plans | Axion",
+         "Axion plans for SOLIDWORKS designers: Start without AI, Plus with the AI design assistant, Pro for demanding engineers. Monthly or yearly, prices incl. VAT, cancel anytime."),
+  "cs": ("Ceník: balíčky Start, Plus a Pro | Axion",
+         "Balíčky Axionu pro konstruktéry v SOLIDWORKS: Start bez AI, Plus s AI asistentem, Pro pro náročné. Měsíčně nebo ročně, ceny vč. DPH, zrušení kdykoli.")},
+ "thanks": {
+  "en": ("Thank you for your purchase | Axion", "Your Axion licence key is on its way by e-mail."),
+  "cs": ("Děkujeme za nákup | Axion", "Licenční klíč k Axionu vám posíláme e-mailem.")},
  "terms": {
-  "en": ("Terms of use and trial licence | Axion", "Terms of use of the axion-cad.com website and the free Axion trial licence."),
-  "cs": ("Podmínky užívání a zkušební licence | Axion", "Podmínky užívání webu axion-cad.com a bezplatné zkušební licence Axionu.")},
+  "en": ("Terms of use and licence terms | Axion", "Terms of use of axion-cad.com, the free Axion trial and the Start, Plus and Pro subscriptions: renewal, cancellation, refunds."),
+  "cs": ("Podmínky užívání a licenční podmínky | Axion", "Podmínky užívání webu axion-cad.com, zkušební verze Axionu a předplatného Start, Plus a Pro: obnova, zrušení, vrácení peněz.")},
  "privacy": {
   "en": ("Privacy policy | Axion", "How LMD Technologies s.r.o. processes personal data for the Axion trial, licences and website."),
   "cs": ("Zásady ochrany osobních údajů | Axion", "Jak LMD Technologies s.r.o. zpracovává osobní údaje u zkušební verze, licencí a webu Axion.")}, "guide": {
@@ -95,10 +104,11 @@ def seo_block(lang, pid, depth):
     ldj = json.dumps({"@context": "https://schema.org", "@graph": ld}, ensure_ascii=False)
     og_locale = "cs_CZ" if lang == "cs" else "en_US"
     verify = "".join("\n" + v for v in VERIFY[lang]) if pid == "home" else ""
+    robots_meta = '\n<meta name="robots" content="noindex">' if pid in NOINDEX else ""
     return f'''<!-- seo -->
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<link rel="canonical" href="{url(lang, pid)}">
+<link rel="canonical" href="{url(lang, pid)}">{robots_meta}
 <link rel="alternate" hreflang="en" href="{url("en", pid)}">
 <link rel="alternate" hreflang="cs" href="{url("cs", pid)}">
 <link rel="alternate" hreflang="x-default" href="{url("en", pid)}">
@@ -190,7 +200,7 @@ def cz_path(v):
 def sitemap():
     rows = []
     for lang in ("en", "cs"):
-      for pid in PATHS:
+      for pid in [p for p in PATHS if p not in NOINDEX]:
         rows.append(f'''  <url><loc>{url(lang, pid)}</loc>
     <xhtml:link rel="alternate" hreflang="en" href="{url("en", pid)}"/>
     <xhtml:link rel="alternate" hreflang="cs" href="{url("cs", pid)}"/>
