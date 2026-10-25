@@ -53,10 +53,10 @@ PAGES = {
          "How Axion is built for your company: kick-off, pilot on your parts, rollout. Local-first security, your own AI API key (Claude, ChatGPT, Gemini, Mistral) and low running costs."),
   "cs": ("Nasazení AI do konstrukce na míru a bezpečně | Axion",
          "Jak Axion stavíme pro vaši firmu: úvodní schůzka, pilot na vašich dílech, nasazení. Lokálně od základu, vlastní API klíč k AI (Claude, ChatGPT, Gemini, Mistral) a nízké náklady.")}, "download": {
-  "en": ("Download Axion – free 30-day trial for SOLIDWORKS | Axion",
-         "Try Axion, the AI design assistant inside SOLIDWORKS, free for 30 days on your own parts and drawings. Download link and activation key by e-mail."),
-  "cs": ("Stáhnout Axion – 30 dní zdarma pro SOLIDWORKS | Axion",
-         "Vyzkoušejte Axion, AI asistenta konstruktéra v SOLIDWORKS, 30 dní zdarma na vlastních dílech a výkresech. Odkaz ke stažení a aktivační klíč e-mailem.")},
+  "en": ("Download Axion – free 7-day trial for SOLIDWORKS | Axion",
+         "Try Axion, the AI design assistant inside SOLIDWORKS, free for 7 days on your own parts and drawings. Download link and activation key by e-mail."),
+  "cs": ("Stáhnout Axion – 7 dní zdarma pro SOLIDWORKS | Axion",
+         "Vyzkoušejte Axion, AI asistenta konstruktéra v SOLIDWORKS, 7 dní zdarma na vlastních dílech a výkresech. Odkaz ke stažení a aktivační klíč e-mailem.")},
  "pricing": {
   "en": ("Pricing: Start, Plus and Pro plans | Axion",
          "Axion plans for SOLIDWORKS designers: Start without AI, Plus with the AI design assistant, Pro for demanding engineers. Monthly or yearly, prices incl. VAT, cancel anytime."),
