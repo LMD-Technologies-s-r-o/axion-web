@@ -900,3 +900,12 @@ footer .flinks{display:flex;gap:16px}footer .flinks a{color:inherit;text-decorat
 .guide table.ptbl td:not(:first-child),.guide table.ptbl th:not(:first-child){text-align:center;white-space:nowrap}
 .guide table.ptbl .soon-t{display:inline-block;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#64748B;background:#E2E8F0;padding:1px 6px;border-radius:999px;margin-left:4px;vertical-align:middle}
 .guide table.ptbl td:first-child{min-width:190px}
+.pr-cmp{max-width:980px;margin:30px auto 0;border-bottom:0;padding-block:0}
+.pr-cmp summary{justify-content:center;font-size:1rem;color:var(--blue);padding:10px 0}
+.pr-cmp summary::after{content:"+";margin-left:2px}
+.pr-cmp .tbl{overflow-x:auto;border:1px solid var(--line-2);border-radius:14px;margin-top:12px;background:var(--panel)}
+.pr-cmp table{width:100%;border-collapse:collapse;font-size:.88rem;min-width:600px}
+.pr-cmp th{background:var(--bg);padding:11px 10px;font-weight:700;text-align:center}
+.pr-cmp td{padding:9px 10px;border-top:1px solid var(--line-2);text-align:center;vertical-align:top;white-space:nowrap}
+.pr-cmp td:first-child,.pr-cmp th:first-child{text-align:left;white-space:normal;min-width:260px}
+.pr-cmp .soon-t{display:inline-block;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#64748B;background:#E2E8F0;padding:1px 6px;border-radius:999px}
