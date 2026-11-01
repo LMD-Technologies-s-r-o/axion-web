@@ -29,24 +29,24 @@ NOINDEX = {"thanks"}                                   # not in sitemap, robots 
 
 PAGES = {
  "home": {
-  "en": ("AI assistant for SOLIDWORKS – drawing checks | Axion",
-         "Axion is an AI design engineer inside SOLIDWORKS: drawing checks, manufacturability, standards and cost, connected to PDM/PLM, ERP and MES. Up to 60–70 % less time checking drawings."),
-  "cs": ("AI asistent pro SOLIDWORKS – kontrola výkresů | Axion",
-         "Axion je AI konstruktér přímo v SOLIDWORKS: kontrola výkresů, vyrobitelnost, normy a cena, propojení s PDM/PLM, ERP a MES. O 60–70 % méně času na kontrolu výkresů.")},
+  "en": ("Axion – AI assistant for CAD in SOLIDWORKS",
+         "Axion is an AI design assistant for CAD right inside SOLIDWORKS: modelling from text, images and drawings, drawings, analyses, standards and reports, connected to PDM/PLM and ERP. Try it free for 7 days."),
+  "cs": ("Axion – AI asistent pro CAD v SOLIDWORKS",
+         "Axion je AI asistent pro CAD přímo v SOLIDWORKS: modelování z textu, obrázku i výkresu, výkresy, analýzy, normy a reporty, propojení s PDM/PLM a ERP. Vyzkoušejte ho 7 dní zdarma.")},
  "features": {
-  "en": ("Features: drawing checks, manufacturability, standards | Axion",
-         "What Axion does in SOLIDWORKS: reads live geometry and drawings, checks standards (ISO 2768, ISO 286) and manufacturability, estimates cost, generates drawings and finds similar parts."),
-  "cs": ("Funkce: kontrola výkresů, vyrobitelnost, normy | Axion",
-         "Co Axion umí v SOLIDWORKS: čte živou geometrii a výkresy, kontroluje normy (ISO 2768, ISO 286) a vyrobitelnost, odhadne cenu, generuje výkresy a najde podobné díly.")},
+  "en": ("Features: AI modelling, drawings, analyses and standards | Axion",
+         "What Axion does in SOLIDWORKS: models parts from text, images and drawings, generates drawings, analyses manufacturability and standards (ISO 2768, ISO 286), creates reports, finds similar parts and sends models to your phone in AR."),
+  "cs": ("Funkce: AI modelování, výkresy, analýzy a normy | Axion",
+         "Co Axion umí v SOLIDWORKS: vymodeluje díl z textu, obrázku i výkresu, vygeneruje výkres, posoudí vyrobitelnost a normy (ISO 2768, ISO 286), připraví report, najde podobné díly a pošle model do telefonu v AR.")},
  "integrations": {
   "en": ("Connect SOLIDWORKS with PDM/PLM, ERP (SAP, Helios) and MES | Axion",
          "Axion brings CAD, PDM/PLM, ERP (SAP, Helios), MES, production, quality and documentation together in one interface. It writes only to PDM/PLM and reads other systems via API."),
   "cs": ("Propojení SOLIDWORKS s PDM/PLM, ERP (SAP, Helios) a MES | Axion",
          "Axion spojí CAD, PDM/PLM, ERP (SAP, Helios), MES, výrobu, kvalitu i dokumentaci v jednom rozhraní. Zapisuje jen do PDM/PLM, ostatní systémy čte přes API.")},
  "cases": {
-  "en": ("Real cases: AI drawing review and design checks | Axion",
+  "en": ("Real cases: Axion on real parts and drawings | Axion",
          "Unedited Axion answers on real parts and drawings: manufacturability of a shaft drawing, GD&T errors, sheet-metal design review and modeling from text or an image."),
-  "cs": ("Z praxe: AI kontrola výkresu a návrhu dílu | Axion",
+  "cs": ("Z praxe: Axion na skutečných dílech a výkresech | Axion",
          "Needitované odpovědi Axionu na skutečných dílech a výkresech: vyrobitelnost hřídele, chyby v GD&T, kontrola plechového dílu a modelování z textu nebo obrázku.")},
  "deployment": {
   "en": ("Deploying AI in engineering, tailored and local-first | Axion",
@@ -118,7 +118,7 @@ def seo_block(lang, pid, depth):
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{url(lang, pid)}">
-<meta property="og:image" content="{EN_DOM}assets/og-{lang}.png">
+<meta property="og:image" content="{EN_DOM}assets/og-{lang}.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
